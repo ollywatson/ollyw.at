@@ -9,7 +9,7 @@ const ProjectRowAlt = ({ project }: { project: { name: string; role: string; yea
     return (
         <a 
             href={link} 
-            className="button-container flex justify-between items-center p-[20px] text-primary rounded-3xl transition-colors duration-300 hover:bg-buttonBg"
+            className="button-container flex justify-between items-center p-[20px] text-primary rounded-[26px] transition-colors duration-300 hover:bg-buttonBg"
             {...(isExternal && {
                 target: "_blank",
                 rel: "noopener noreferrer" 
@@ -27,10 +27,10 @@ const ProjectRowAlt = ({ project }: { project: { name: string; role: string; yea
                     />
                 </div>
                 <div className="w-full">
-                    <p className="text-sm font-bold">{name}</p>
+                    <p className="text-sm md:text-sm-md font-bold">{name}</p>
                     <div className="flex items-center justify-between">
-                        <p className="text-sm text-secondary">{role}</p>
-                        <p className="text-sm text-secondary">{year}</p>
+                        <p className="text-sm md:text-sm-md text-secondary">{role}</p>
+                        <p className="text-sm md:text-sm-md text-secondary">{year}</p>
                     </div>
                 </div>
             </div>

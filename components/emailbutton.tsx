@@ -3,7 +3,7 @@ import AnimatedIconWrapper from './animatediconwrapper';
 
 const EmailButton = () => {
     return (
-        <button className="button-container flex items-center justify-center pl-[20px] pr-[26px] pt-[9px] pb-[11px] bg-white border-2 border-borderLight rounded-full hover:bg-buttonBg hover:border-buttonBg text-primary relative overflow-hidden transition-colors duration-200">
+        <button className="button-container flex items-center justify-center pl-[20px] pr-[26px] pt-[9px] pb-[11px] bg-white hover:bg-buttonBg hover:border-buttonBg border-2 border-borderLight rounded-full text-primary relative overflow-hidden transition-colors duration-200">
             <div className="w-5 h-5 relative mr-2">
                 <AnimatedIconWrapper>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,7 +11,7 @@ const EmailButton = () => {
                     </svg>
                 </AnimatedIconWrapper>
             </div>
-            <span className="text-sm font-bold">Contact</span>
+            <span className="text-sm md:text-sm-md font-bold">Contact</span>
         </button>
     );
 }

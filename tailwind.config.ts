@@ -23,8 +23,11 @@ export default {
         'sans': ['Mona Sans', 'sans-serif'], // Add your font name first, followed by fallback fonts
       },
       fontSize: {
-        'base': ['16px', '26px'],
-        'sm': ['14px', '22px']
+        'base': ['15px', '26px'],
+        'base-md': ['16px', '26px'],
+        'sm': ['13px', '22px'],
+        'sm-md': ['14px', '22px']
+
       },
       backgroundImage: {
         'dot-pattern': "radial-gradient(circle, #E9EEF5 10%, transparent 10%)"
