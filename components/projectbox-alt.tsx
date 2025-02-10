@@ -1,17 +1,59 @@
 import React from 'react';
 import ProjectRowAlt from './projectrow-alt';
+import matter from 'gray-matter';
+import fs from 'fs/promises';
+import path from 'path';
 
-const projects = [
-    { id: 1, name: 'Deliveroo', role: 'Staff Product Designer', year: '2021 - present', link: '/deliveroo', imageUrl: '/deliveroo-icon.png' },
-    { id: 2, name: 'Voicey', role: 'Personal Side Project', year: '2021 - present', link: 'https://voicey.com', imageUrl: '/voicey-icon.png' },
-    { id: 3, name: 'Rhinestone', role: 'Lead Designer', year: '2023 – 2024', link: 'https://kantan.com', imageUrl: '/rhinestone-icon.png' }
-];
+const contentDir = './content';
 
-const ProjectBoxAlt = () => {
+interface Project {
+    id: number;
+    name: string;
+    role: string;
+    year: string;
+    link: string;
+    icon: string;
+    color: string;
+    hasCases: boolean;
+}
+
+const parseContent = async () => {
+    const projects: Project[] = [];
+    const dirs = await fs.readdir(contentDir);
+    for (const dir of dirs) {
+        const dirPath = path.join(contentDir, dir);
+        const stats = await fs.stat(dirPath);
+        if (stats.isDirectory()) {
+            const indexPath = path.join(dirPath, 'index.md');
+            try {
+                const fileContent = await fs.readFile(indexPath, 'utf8');
+                const { data } = matter(fileContent);
+                const hasCases = data.cases && data.cases.length > 0;
+                projects.push({
+                    id: projects.length + 1,
+                    name: data.name,
+                    role: data.role || '',
+                    year: data.timeline || '',
+                    link: data.link || '',
+                    icon: `/${data.icon || 'deliveroo-icon.png'}`, // Adjusted icon path for direct public access
+                    color: data.color || '#000000', // Added color property with default value
+                    hasCases: hasCases, // Added hasCases property
+                });
+            } catch (error) {
+                console.error(`Error reading index.md in ${dirPath}:`, error);
+            }
+        }
+    }
+    return projects;
+};
+
+const ProjectBoxAlt = async () => {
+    const projects = await parseContent();
+
     return (
         <div className="mt-4 overflow-hidden group">
             {projects.map((project, index) => (
-                <div key={project.id} className="relative">
+                <div key={project.id} className="relative group">
                     <ProjectRowAlt project={project} />
                     {index !== projects.length - 1 && (
                         <div className="absolute bottom-0 left-0 right-0 h-[1.5px] opacity-100 group-hover:opacity-0 transition-opacity duration-300">

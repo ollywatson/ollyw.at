@@ -16,12 +16,12 @@ const ProjectRow = ({ project }: { project: { name: string; role: string; year: 
             })}
         >
             <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 p-6 bg-black">
                     <Image 
                         src={imageUrl} // Use destructured imageUrl
                         alt={`${name} logo`}
-                        width={52}
-                        height={52}
+                        width={40}
+                        height={40}
                         className="rounded-lg"
                         priority // Add priority for above-the-fold images
                     />

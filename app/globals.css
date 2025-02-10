@@ -13,3 +13,7 @@ body {
   font-family: 'Mona Sans', sans-serif;
   @apply antialiased;
 }
+
+svg {
+  shape-rendering: geometricPrecision;
+}

@@ -14,7 +14,7 @@ const Profile = () => {
                 <p className="text-base md:text-base-md text-secondary">I’m a product designer based in London, UK.</p>
             </div>
             <div className="mt-[26px]">
-                <p className="text-base md:text-bas-emd text-secondary">I currently work at <span className="font-bold text-primary">Tessl</span> helping build new tools for developing software using AI. Previously I worked in the consumer team at <span className="font-bold text-primary">Deliveroo</span>. I also designed and built <span className="font-bold text-primary">Voicey</span>, a voice-first messaging app, available on iOS.</p>
+                <p className="text-base md:text-base-md text-secondary">I currently work at <span className="font-bold text-primary">Tessl</span> helping build new tools for developing software using AI. Previously I worked in the consumer team at <span className="font-bold text-primary">Deliveroo</span>. I also designed and built <span className="font-bold text-primary">Voicey</span>, a voice-first messaging app, available on iOS.</p>
             </div>
             <div className="mt-[44px]">
                 <EmailButton />
