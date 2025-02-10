@@ -1,6 +1,10 @@
 import React from 'react';
 
-const ProfileIcon = ({ color }) => {
+interface ProfileIconProps {
+    color: string; // Define the type for the color prop
+}
+
+const ProfileIcon: React.FC<ProfileIconProps> = ({ color }) => {
     return (
         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.6126 19.0786C16.556 21.0536 13.321 21.022 11.3873 19.0081" stroke={color} strokeWidth="2" strokeLinecap="round"/>

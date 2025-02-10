@@ -15,6 +15,7 @@ interface Project {
     icon: string;
     color: string;
     hasCases: boolean;
+    slug: string; // Added slug property
 }
 
 const parseContent = async () => {
@@ -38,6 +39,7 @@ const parseContent = async () => {
                     icon: `/${data.icon || 'deliveroo-icon.png'}`, // Adjusted icon path for direct public access
                     color: data.color || '#000000', // Added color property with default value
                     hasCases: hasCases, // Added hasCases property
+                    slug: data.name.toLowerCase().replace(/\s+/g, '-'),
                 });
             } catch (error) {
                 console.error(`Error reading index.md in ${dirPath}:`, error);
@@ -53,7 +55,7 @@ const ProjectBoxAlt = async () => {
     return (
         <div className="mt-4 overflow-hidden group">
             {projects.map((project, index) => (
-                <div key={project.id} className="relative group">
+                <div key={project.id} className="relative">
                     <ProjectRowAlt project={project} />
                     {index !== projects.length - 1 && (
                         <div className="absolute bottom-0 left-0 right-0 h-[1.5px] opacity-100 group-hover:opacity-0 transition-opacity duration-300">
