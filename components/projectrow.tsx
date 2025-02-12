@@ -1,46 +1,41 @@
 import React from 'react';
 import AnimatedIconWrapper from './animatediconwrapper';
 import Image from 'next/image';
+import Link from 'next/link';
 
-const ProjectRow = ({ project }: { project: { name: string; role: string; year: string; link: string; imageUrl: string } }) => {
-    const { name, role, year, link, imageUrl } = project; // Destructure imageUrl
+const ProjectRow = ({ project }: { project: { name: string; role: string; year: string; link: string; icon: string; color: string; hasCases: boolean; slug: string } }) => {
+    const { name, role, year, link, icon, color, hasCases, slug } = project; // Destructure imageUrl, color, hasCases, and slug
     const isExternal = link.startsWith('http');
 
     return (
-        <a 
-            href={link} 
-            className="button-container flex justify-between items-center p-[26px] bg-white hover:bg-borderLight text-secondary hover:text-primary"
-            {...(isExternal && {
+        <Link 
+            href={hasCases ? `/projects/${slug}` : link} 
+            className={`button-container flex justify-between items-center p-[20px] text-primary rounded-[26px] transition-colors duration-300 hover:bg-buttonBg ${color} relative group`}
+            {...(isExternal && !hasCases && {
                 target: "_blank",
                 rel: "noopener noreferrer" 
             })}
         >
-            <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0">
+            <div className="flex items-center space-x-4 w-full">
+                <div className={`flex-shrink-0 p-[6px] rounded-full`} style={{ backgroundColor: color }}>
                     <Image 
-                        src={imageUrl} // Use destructured imageUrl
+                        src={icon} // Use destructured imageUrl
                         alt={`${name} logo`}
-                        width={52}
-                        height={52}
+                        width={40}
+                        height={40}
                         className="rounded-lg"
                         priority // Add priority for above-the-fold images
                     />
                 </div>
-                <div className="flex-grow">
-                    <p className="text-base font-bold">{name}</p>
-                    <p className="text-base text-tertiary">{year} · {role}</p>
+                <div className="w-full">
+                    <p className="text-base md:text-base-md font-bold">{name}</p>
+                    <div className="flex items-center justify-between">
+                        <p className="text-sm md:text-sm-md text-tertiary">{role}</p>
+                        <p className="text-sm md:text-sm-md text-tertiary">{year}</p>
+                    </div>
                 </div>
             </div>
-            <div className="p-[10px] border-2 border-borderLight rounded-full bg-white">
-                <div className="w-5 h-5 relative">
-                    <AnimatedIconWrapper>
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 15L15 5M15 5L7.14286 5M15 5V12.8571" className="stroke-current" stroke-width="2.14286" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </AnimatedIconWrapper>
-                </div>
-            </div>
-        </a>
+        </Link>
     );
 };
 
