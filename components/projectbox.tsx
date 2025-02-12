@@ -51,6 +51,7 @@ const parseContent = async () => {
 
 const ProjectBoxAlt = async () => {
     const projects = await parseContent();
+    console.log(projects)
 
     return (
         <div className="mt-4 overflow-hidden group">

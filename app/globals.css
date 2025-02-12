@@ -5,12 +5,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Font Variables */
+  --font-funnel-sans: 'Funnel Sans', sans-serif;
+  --font-mona-sans: 'Mona Sans', sans-serif;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Mona Sans', sans-serif;
+  font-family: var(--font-mona-sans);
   @apply antialiased;
 }
 
