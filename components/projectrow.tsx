@@ -9,7 +9,7 @@ const ProjectRow = ({ project }: { project: { name: string; role: string; year: 
 
     return (
         <Link 
-            href={hasCases ? `/projects/${slug}` : link} 
+            href={hasCases ? `/projects/${slug}/multi-basket` : link} 
             className={`button-container flex justify-between items-center p-[20px] text-primary rounded-[26px] transition-colors duration-300 hover:bg-buttonBg ${color} relative group`}
             {...(isExternal && !hasCases && {
                 target: "_blank",

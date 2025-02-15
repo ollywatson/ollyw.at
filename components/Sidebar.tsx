@@ -1,14 +1,16 @@
 'use client';
 
-import React, { FC, useState } from 'react'
+import React from 'react'
 // import ArrowLeftCircle from './ArrowLeftCircle';
 // import BackButton from './BackButton';
 import AnimatedIconWrapper from './animatediconwrapper';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'
 
-const Sidebar: FC = () => {
-    const [activeTab, setActiveTab] = useState('multi-basket');
 
+export default function Sidebar({slug, slugItem}) {
+    const router = useRouter();
+    // console.log(slug);
     return (
         <div className='fixed top-0 left-0 w-1/4 min-h-screen pt-[62px] px-[52px] border-r border-[#ECF2F9] bg-white'>
             <div className=''>
@@ -32,22 +34,26 @@ const Sidebar: FC = () => {
 
             <div className='flex flex-col items-start'>
                 <button
-                    className={`flex items-center justify-between relative w-full h-[62px] border-b text-left z-20 ${activeTab === 'multi-basket' ? 'after:rounded-2xl  border-transparent  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full after:top-0 after:left-[-20px] after:transition-all' : ' border-[#ECF2F9]'}`}
-                    onClick={() => setActiveTab('multi-basket')}
+                    className={`flex items-center justify-between relative w-full h-[62px] border-b text-left z-20 ${slugItem === 'multi-basket' ? 'after:rounded-2xl  border-transparent  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full after:top-0 after:left-[-20px] after:transition-all' : ' border-[#ECF2F9]'}`}
+                    // onClick={() => setActiveTab('multi-basket')}
+                    onClick={() => router.push(`/projects/${slug}/multi-basket`)}
                 >
                     Multi-basket
                     <span className='text-[#2E3741]'>2024</span>
                 </button>
                 <button
-                    className={`flex items-center justify-between relative w-full h-[62px] border-b text-left z-20 ${activeTab === 'deliveroo-plus' ? 'after:rounded-2xl  border-transparent  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full  after:top-0 after:left-[-20px] after:transition-all' : ' border-[#ECF2F9]'}`}
-                    onClick={() => setActiveTab('deliveroo-plus')}
+                    className={`flex items-center justify-between relative w-full h-[62px] border-b text-left z-20 ${slugItem === 'deliveroo-plus' ? 'after:rounded-2xl  border-transparent  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full  after:top-0 after:left-[-20px] after:transition-all' : ' border-[#ECF2F9]'}`}
+                    // onClick={() => setActiveTab('deliveroo-plus')}
+                    onClick={() => router.push(`/projects/${slug}/deliveroo-plus`)}
                 >
                     Deliveroo Plus
                     <span className='text-[#2E3741]'>2023</span>
                 </button>
                 <button
-                    className={`flex items-center justify-between relative w-full h-[62px] text-left z-20 ${activeTab === 'basket-quick-view' ? 'after:rounded-2xl  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full  after:top-0 after:left-[-20px] after:transition-all' : ''}`}
-                    onClick={() => setActiveTab('basket-quick-view')}
+                    className={`flex items-center justify-between relative w-full h-[62px] text-left z-20 ${slugItem === 'basket-quick-view' ? 'after:rounded-2xl  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full  after:top-0 after:left-[-20px] after:transition-all' : ''}`}
+                    // onClick={() => setActiveTab('basket-quick-view')}
+                    onClick={() => router.push(`/projects/${slug}/basket-quick-view`)}
+
                 >
                     Basket Quick View
                     <span className='text-[#2E3741]'>2022</span>
@@ -56,5 +62,3 @@ const Sidebar: FC = () => {
         </div>
     )
 }
-
-export default Sidebar;
