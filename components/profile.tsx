@@ -11,7 +11,7 @@ const Profile = () => {
             </div>
 
             <div className="mt-[43px]">
-                <p className="text-base md:text-base-md text-secondary">I’m a product designer based in London, UK.</p>
+                <p className="text-base md:text-base-md text-secondary">I’m a software designer based in London, UK.</p>
             </div>
             <div className="mt-[26px]">
                 <p className="text-base md:text-base-md text-secondary">I currently work in the consumer team at <span className="font-bold text-primary">Deliveroo</span>. I also designed and built <span className="font-bold text-primary">Voicey</span>, a voice-first messaging app, available on iOS.</p>
