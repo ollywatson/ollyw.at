@@ -8,11 +8,28 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation'
 
 
-export default function Sidebar({slug, slugItem}) {
+interface ProjectData {
+    id: number;
+    name: string;
+    role: string;
+    year: string;
+    link: string;
+    icon: string;
+    color: string;
+    hasCases: boolean;
+    slug: string;
+  }
+  interface PageProps {
+    slug: string;
+    slugItem: string;
+    projectData: ProjectData[]; // Array of ProjectData objects
+  }
+
+  export default function Sidebar({ slug, slugItem, projectData }: PageProps) {
     const router = useRouter();
-    // console.log(slug);
+
     return (
-        <div className='fixed top-0 left-0 w-1/4 min-h-screen pt-[62px] px-[52px] border-r border-[#ECF2F9] bg-white'>
+        <div className='fixed top-0 left-0 lg:w-1/4 md:w-2/5 min-h-screen pt-[62px] px-[52px] border-r border-[#ECF2F9] bg-white'>
             <div className=''>
                 <Link href='/' >
                     <button className='button-container relative h-11 w-11 rounded-full flex items-center justify-center border transition-all delay-300 border-[#ECF2F9] hover:bg-[#ECF2F9]'>
@@ -26,9 +43,9 @@ export default function Sidebar({slug, slugItem}) {
 
                 {/* <BackButton /> */}
                 <div className='mt-6 mb-16 text-[#4D555F]'>
-                    <h4 className='text-[16px] font-bold text-[#2E3741]'>Deliveroo</h4>
-                    <p className='mt-3'>Staff Product Designer</p>
-                    <p>{`2021 – present`}</p>
+                    <h4 className='text-[16px] font-bold text-[#2E3741]'>{projectData[0].name}</h4>
+                    <p className='mt-3'>{projectData[0].role}</p>
+                    <p>{projectData[0].year}</p>
                 </div>
             </div>
 

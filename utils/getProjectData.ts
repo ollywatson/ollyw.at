@@ -4,7 +4,7 @@ import path from "path";
 
 const contentDir = "./content";
 
-export const parseContent = async (slug:string, activeContent:string) => {
+export const getProjectData = async (slug:string, activeContent:string) => {
   const dirs = await fs.readdir(contentDir);
 
   for (const dir of dirs) {

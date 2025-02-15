@@ -1,40 +1,37 @@
-// import Image from 'next/image';
 import React from 'react';
-// import { data } from '@/content/data';
-// import ProjectDetailsTabs from '@/components/ProjectDetails';
-import { parseContent } from '@/utils/getProjectData';
 import Markdown from 'markdown-to-jsx';
 import Sidebar from '@/components/Sidebar';
+import { parseContent } from '@/utils/parseContent'
+import { getProjectData } from '@/utils/getProjectData';
+import MobileNav from '@/components/MobileNav';
 
-
-// Generate static paths for all projects
-// export async function generateStaticParams() {
-//   return data.map((project) => ({
-//     slug: project.slug,
-//   }));
+// interface PageProps {
+//   params: {
+//     slug: string;
+//     slugItem: string;
+//   };
 // }
 
-// Fetch project data based on the slug
-// async function getProject(slug: string) {
-//   const project = data.find((project) => project.slug === slug);
-//   if (!project) {
-//     throw new Error('Project not found');
-//   }
-//   return project;
-// }
+interface PageProps {
+  params: Promise<{ slug: string[], slugItem: string[] }>;
+}
 
-
-export default async function ProjectDetails({ params }: { params: { slug: string, slugItem: string } }) {
+export default async function ProjectDetails({ params }: PageProps) {
   const { slug, slugItem } = await params;
-  // const project = await getProject(slug);
-const slugItemPlain = slugItem.split('-').join('');
-  const { fileData, content } = await parseContent(slug, slugItemPlain);
+  
+  const projects = await parseContent();
+
+  const slugItemPlain = slugItem.split('-').join('');
+  const { fileData, content } = await getProjectData(slug, slugItemPlain);
+
+  const projectData = projects.filter((project) => project?.slug === slug);
 
   return (
-    <div className="relative z-30 flex">
-      <Sidebar slug={slug} slugItem={slugItem} />
-      <div className='w-full md:w-3/4 md:mt-12 ml-auto'>
-        <div className='w-1/2 mx-auto text-[16px] text-primary'>
+    <div className="relative z-30 flex flex-col md:flex-row md:p-0 p-6">
+    {/* <Sidebar slug={slug} slugItem={slugItem} projectData={projectData} /> */}
+    <MobileNav slug={slug} slugItem={slugItem} projectData={projectData} />
+      <div className='w-full lg:w-3/4 md:w-3/5 md:mt-12 ml-auto mt-6'>
+        <div className='lg:w-1/2 md:w-10/12 mx-auto text-[16px] text-primary'>
           <main className=''>
             <article>
               <Markdown
@@ -44,12 +41,7 @@ const slugItemPlain = slugItem.split('-').join('');
                     p: {
                       component: 'p',
                       props: {
-                        style: {
-                          marginBottom: '3rem', // Matches the spacing in your component
-                          lineHeight: '1.6',
-                          fontSize: '16px', // Matches your text size
-                          color: '#4D555F', // Matches your text color
-                        },
+                        className: 'text-base text-secondary mb-[26px] leading-relaxed text-base text-[#4D555F]', // Tailwind classes
                       },
                     },
 
@@ -57,12 +49,7 @@ const slugItemPlain = slugItem.split('-').join('');
                     h1: {
                       component: 'h1',
                       props: {
-                        style: {
-                          fontSize: '24px', // Matches your heading size
-                          fontWeight: 'bold',
-                          marginBottom: '1.5rem', // Matches your spacing
-                          color: '#2E3741', // Matches your heading color
-                        },
+                        className: 'text-2xl font-bold mb-6 text-[#2E3741]', // Tailwind classes
                       },
                     },
 
@@ -70,12 +57,7 @@ const slugItemPlain = slugItem.split('-').join('');
                     h2: {
                       component: 'h2',
                       props: {
-                        style: {
-                          fontSize: '20px',
-                          fontWeight: 'bold',
-                          marginBottom: '1.5rem',
-                          color: '#2E3741',
-                        },
+                        className: 'text-xl font-bold mb-6 text-[#2E3741]', // Tailwind classes
                       },
                     },
 
@@ -83,12 +65,19 @@ const slugItemPlain = slugItem.split('-').join('');
                     h3: {
                       component: 'h3',
                       props: {
-                        style: {
-                          fontSize: '18px',
-                          fontWeight: 'bold',
-                          marginBottom: '1.5rem',
-                          color: '#2E3741',
-                        },
+                        className: 'text-lg font-bold mb-6 text-[#2E3741]', // Tailwind classes
+                      },
+                    },
+
+                    // Video (<video>) styling
+                    video: {
+                      component: 'video',
+                      props: {
+                        className: 'w-1/2 h-auto mt-8 mb-2 mx-auto rounded-3xl border-2 border-[#ECF2F9]', // Tailwind classes
+                        autoPlay: true,
+                        loop: true,
+                        muted: true,
+                        playsInline: true,
                       },
                     },
 
@@ -96,16 +85,7 @@ const slugItemPlain = slugItem.split('-').join('');
                     img: {
                       component: 'img',
                       props: {
-                        style: {
-                          maxWidth: '50%', // Matches your image width
-                          height: 'auto',
-                          borderRadius: '24px', // Matches your rounded-3xl
-                          border: '2px solid #ECF2F9', // Matches your border
-                          marginTop: '2rem', // Matches your mt-8
-                          marginBottom: '0.5rem', // Matches your mb-2
-                          marginLeft: 'auto',
-                          marginRight: 'auto', // Centers the image
-                        },
+                        className: 'max-w-[50%] h-auto mt-8 mb-2 mx-auto rounded-3xl border-2 border-[#ECF2F9]', // Tailwind classes
                       },
                     },
 
@@ -113,10 +93,7 @@ const slugItemPlain = slugItem.split('-').join('');
                     a: {
                       component: 'a',
                       props: {
-                        style: {
-                          color: '#2E3741', // Matches your text color
-                          textDecoration: 'underline',
-                        },
+                        className: 'text-[#2E3741] underline', // Tailwind classes
                       },
                     },
 
@@ -124,48 +101,37 @@ const slugItemPlain = slugItem.split('-').join('');
                     blockquote: {
                       component: 'blockquote',
                       props: {
-                        style: {
-                          borderLeft: '4px solid #ECF2F9',
-                          paddingLeft: '1rem',
-                          marginBottom: '1.5rem',
-                          color: '#4D555F',
-                          fontStyle: 'italic',
-                        },
+                        className: 'border-l-4 border-[#ECF2F9] pl-4 mb-6 text-[#4D555F] italic', // Tailwind classes
                       },
                     },
 
-                    // List (<ul> and <ol>) styling
+                    // Unordered List (<ul>) styling
                     ul: {
                       component: 'ul',
                       props: {
-                        style: {
-                          marginBottom: '1.5rem',
-                          paddingLeft: '1.5rem',
-                          listStyleType: 'disc',
-                          color: '#4D555F',
-                        },
-                      },
-                    },
-                    ol: {
-                      component: 'ol',
-                      props: {
-                        style: {
-                          marginBottom: '1.5rem',
-                          paddingLeft: '1.5rem',
-                          listStyleType: 'decimal',
-                          color: '#4D555F',
-                        },
+                        className: 'mb-6 pl-6 list-disc text-[#4D555F]', // Tailwind classes
                       },
                     },
 
-                    // List item (<li>) styling
+                    // Ordered List (<ol>) styling
+                    ol: {
+                      component: 'ol',
+                      props: {
+                        className: 'mb-6 pl-6 list-decimal text-[#4D555F]', // Tailwind classes
+                      },
+                    },
+
+                    // List Item (<li>) styling
                     li: {
                       component: 'li',
                       props: {
-                        style: {
-                          marginBottom: '0.5rem',
-                          lineHeight: '1.6',
-                        },
+                        className: 'mb-2 leading-relaxed', // Tailwind classes
+                      },
+                    },
+                    label: {
+                      component: 'label',
+                      props: {
+                        className: 'text-sm text-tertiary mb-[26px]', // Tailwind classes
                       },
                     },
                   },
@@ -177,9 +143,6 @@ const slugItemPlain = slugItem.split('-').join('');
           </main>
         </div>
       </div>
-
     </div>
-
-
   );
 }

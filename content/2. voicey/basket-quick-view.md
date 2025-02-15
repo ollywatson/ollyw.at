@@ -21,7 +21,7 @@ description: "Classic, chewy cookies loaded with semi-sweet chocolate chips, per
 - 2 cups (12 oz) semi-sweet chocolate chips
 
 ![Pic](/basket-quick-view-1.png)
-<video width="600" autoplay loop muted playsInline class="w-1/2 h-auto mt-8 mb-2 mx-auto rounded-3xl border-2">
+<video>
   <source src="/multi-basket-video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
