@@ -5,12 +5,6 @@ import { parseContent } from '@/utils/parseContent'
 import { getProjectData } from '@/utils/getProjectData';
 import MobileNav from '@/components/MobileNav';
 
-// interface PageProps {
-//   params: {
-//     slug: string;
-//     slugItem: string;
-//   };
-// }
 
 interface PageProps {
   params: Promise<{ slug: string[], slugItem: string[] }>;
@@ -18,7 +12,7 @@ interface PageProps {
 
 export default async function ProjectDetails({ params }: PageProps) {
   const { slug, slugItem } = await params;
-  
+
   const projects = await parseContent();
 
   const slugItemPlain = slugItem.split('-').join('');
@@ -28,8 +22,12 @@ export default async function ProjectDetails({ params }: PageProps) {
 
   return (
     <div className="relative z-30 flex flex-col md:flex-row md:p-0 p-6">
-    {/* <Sidebar slug={slug} slugItem={slugItem} projectData={projectData} /> */}
-    <MobileNav slug={slug} slugItem={slugItem} projectData={projectData} />
+      <div className='md:hidden'>
+        <MobileNav slug={slug} slugItem={slugItem} projectData={projectData} />
+      </div>
+      <div className='hidden md:block'>
+        <Sidebar slug={slug} slugItem={slugItem} projectData={projectData} />
+      </div>
       <div className='w-full lg:w-3/4 md:w-3/5 md:mt-12 ml-auto mt-6'>
         <div className='lg:w-1/2 md:w-10/12 mx-auto text-[16px] text-primary'>
           <main className=''>
