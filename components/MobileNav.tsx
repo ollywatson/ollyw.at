@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useState } from 'react'
-import { useRouter } from 'next/navigation'
-
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface ProjectData {
     id: number;
@@ -15,19 +14,39 @@ interface ProjectData {
     hasCases: boolean;
     slug: string;
 }
+
 interface PageProps {
     slug: string;
     slugItem: string;
     projectData: ProjectData[]; // Array of ProjectData objects
+    currentProjectCases: string[]; // Add this prop
 }
 
-export default function MobileNav({ slug, slugItem, projectData }: PageProps) {
+export default function MobileNav({ slug, slugItem, projectData, currentProjectCases }: PageProps) {
     const [isOpen, setIsOpen] = useState(false);
-
     const router = useRouter();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+    };
+
+    const renderTabs = () => {
+        return currentProjectCases.map((caseItem: string) => {
+            // Perform string modifications
+            const formattedCaseItem = caseItem
+                .replace(/-/g, ' ') // Replace hyphens with spaces
+                .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalize the first letter of each word
+
+            return (
+                <button
+                    key={caseItem}
+                    className={`flex items-center p-4 justify-between relative w-full h-[62px] ${slugItem === caseItem ? 'bg-[#ECF2F9]' : ''} ${caseItem !== currentProjectCases[0] ? 'border-t-2 border-[#ECF2F9]' : ''}`}
+                    onClick={() => router.push(`/projects/${slug}/${caseItem}`)}
+                >
+                    {formattedCaseItem}
+                </button>
+            );
+        });
     };
 
     return (
@@ -63,31 +82,8 @@ export default function MobileNav({ slug, slugItem, projectData }: PageProps) {
                 className={`absolute w-full flex left-0 top-[calc(100%+20px)] rounded-3xl overflow-hidden flex-col items-start border-2 border-[#ECF2F9] bg-white transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
                     }`}
             >
-                <button
-                    className={`flex items-center p-4 justify-between relative w-full h-[62px] text-left z-20 ${slugItem === 'multi-basket' ? 'bg-[#ECF2F9]' : ''
-                        }`}
-                    onClick={() => router.push(`/projects/${slug}/multi-basket`)}
-                >
-                    Multi-basket
-                    <span className="text-[#2E3741]">2024</span>
-                </button>
-                <button
-                    className={`flex items-center p-4 justify-between relative w-full h-[62px] border-y-2 border-[#ECF2F9] text-left z-20 ${slugItem === 'deliveroo-plus' ? 'bg-[#ECF2F9]' : ''
-                        }`}
-                    onClick={() => router.push(`/projects/${slug}/deliveroo-plus`)}
-                >
-                    Deliveroo Plus
-                    <span className="text-[#2E3741]">2023</span>
-                </button>
-                <button
-                    className={`flex items-center p-4 justify-between relative w-full h-[62px] text-left z-20 ${slugItem === 'basket-quick-view' ? 'bg-[#ECF2F9]' : ''
-                        }`}
-                    onClick={() => router.push(`/projects/${slug}/basket-quick-view`)}
-                >
-                    Basket Quick View
-                    <span className="text-[#2E3741]">2022</span>
-                </button>
+                {renderTabs()}
             </div>
         </div>
-    )
+    );
 }

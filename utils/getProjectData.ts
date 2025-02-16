@@ -15,7 +15,7 @@ export const getProjectData = async (slug:string, activeContent:string) => {
       if (stats.isDirectory()) {
         const dirFiles = await fs.readdir(dirPath);
         const dataFile = dirFiles.filter((file) => `${activeContent.toLowerCase()}.md` === file.split('-').join(''));
-
+// console.log(dataFile)
         const filePath = path.join(dirPath, dataFile[0]);
         try {
           const fileContent = await fs.readFile(filePath, "utf8");

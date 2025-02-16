@@ -18,15 +18,42 @@ interface ProjectData {
     color: string;
     hasCases: boolean;
     slug: string;
-  }
-  interface PageProps {
+}
+interface Data {
+    name: string;
+    timeline: number;
+}
+interface PageProps {
     slug: string;
     slugItem: string;
-    projectData: ProjectData[]; // Array of ProjectData objects
-  }
+    currentProjectCases: string[];
+    projectData: ProjectData[];
+    fileData: Data[];
+}
 
-  export default function Sidebar({ slug, slugItem, projectData }: PageProps) {
+export default function Sidebar({ slug, slugItem, projectData, currentProjectCases, fileData }: PageProps) {
     const router = useRouter();
+    console.log(currentProjectCases)
+
+    const renderTabs = () => {
+        return currentProjectCases.map((caseItem: string) => {
+            // Perform string modifications
+            const formattedCaseItem = caseItem
+                .replace(/-/g, ' ') // Replace hyphens with spaces
+                .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalize the first letter of each word
+
+            return (
+                <button
+                    key={caseItem}
+                    className={`flex items-center justify-between relative w-full h-[62px] border-b text-left z-20 ${slugItem === caseItem ? 'after:rounded-2xl  border-transparent  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full after:top-0 after:left-[-20px] after:transition-all' : ' border-[#ECF2F9]'}`}
+                    onClick={() => router.push(`/projects/${slug}/${caseItem}`)}
+                >
+                    {formattedCaseItem}
+                </button>
+            );
+        });
+    };
+
 
     return (
         <div className='fixed top-0 left-0 lg:w-1/4 md:w-2/5 min-h-screen pt-[62px] px-[52px] border-r border-[#ECF2F9] bg-white'>
@@ -50,31 +77,7 @@ interface ProjectData {
             </div>
 
             <div className='flex flex-col items-start'>
-                <button
-                    className={`flex items-center justify-between relative w-full h-[62px] border-b text-left z-20 ${slugItem === 'multi-basket' ? 'after:rounded-2xl  border-transparent  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full after:top-0 after:left-[-20px] after:transition-all' : ' border-[#ECF2F9]'}`}
-                    // onClick={() => setActiveTab('multi-basket')}
-                    onClick={() => router.push(`/projects/${slug}/multi-basket`)}
-                >
-                    Multi-basket
-                    <span className='text-[#2E3741]'>2024</span>
-                </button>
-                <button
-                    className={`flex items-center justify-between relative w-full h-[62px] border-b text-left z-20 ${slugItem === 'deliveroo-plus' ? 'after:rounded-2xl  border-transparent  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full  after:top-0 after:left-[-20px] after:transition-all' : ' border-[#ECF2F9]'}`}
-                    // onClick={() => setActiveTab('deliveroo-plus')}
-                    onClick={() => router.push(`/projects/${slug}/deliveroo-plus`)}
-                >
-                    Deliveroo Plus
-                    <span className='text-[#2E3741]'>2023</span>
-                </button>
-                <button
-                    className={`flex items-center justify-between relative w-full h-[62px] text-left z-20 ${slugItem === 'basket-quick-view' ? 'after:rounded-2xl  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full  after:top-0 after:left-[-20px] after:transition-all' : ''}`}
-                    // onClick={() => setActiveTab('basket-quick-view')}
-                    onClick={() => router.push(`/projects/${slug}/basket-quick-view`)}
-
-                >
-                    Basket Quick View
-                    <span className='text-[#2E3741]'>2022</span>
-                </button>
+                {renderTabs()}
             </div>
         </div>
     )

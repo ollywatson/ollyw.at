@@ -4,6 +4,7 @@ import Sidebar from '@/components/Sidebar';
 import { parseContent } from '@/utils/parseContent'
 import { getProjectData } from '@/utils/getProjectData';
 import MobileNav from '@/components/MobileNav';
+import { getProjectCases } from '@/utils/getProjectCases';
 
 
 interface PageProps {
@@ -16,17 +17,23 @@ export default async function ProjectDetails({ params }: PageProps) {
   const projects = await parseContent();
 
   const slugItemPlain = slugItem.split('-').join('');
-  const { fileData, content } = await getProjectData(slug, slugItemPlain);
+  const { data, content } = await getProjectData(slug, slugItemPlain);
 
   const projectData = projects.filter((project) => project?.slug === slug);
 
+  const cases = await getProjectCases();
+  const currentProjectCases: string[] = cases
+      .filter((project: Project) => project?.slug === slug) // Filter by slug
+      .flatMap((project: Project) => project.cases); // Extract and flatten the cases array
+
+      // console.log(currentProjectCases)
   return (
     <div className="relative z-30 flex flex-col md:flex-row md:p-0 p-6">
       <div className='md:hidden'>
-        <MobileNav slug={slug} slugItem={slugItem} projectData={projectData} />
+        <MobileNav slug={slug} slugItem={slugItem} projectData={projectData} currentProjectCases={currentProjectCases} fileData={data} />
       </div>
       <div className='hidden md:block'>
-        <Sidebar slug={slug} slugItem={slugItem} projectData={projectData} />
+        <Sidebar slug={slug} slugItem={slugItem} projectData={projectData} currentProjectCases={currentProjectCases} fileData={data} />
       </div>
       <div className='w-full lg:w-3/4 md:w-3/5 md:mt-12 ml-auto mt-6'>
         <div className='lg:w-1/2 md:w-10/12 mx-auto text-[16px] text-primary'>
