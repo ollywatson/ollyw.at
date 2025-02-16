@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileIcon from './profileicon';
+// import ProfileIcon from './profileicon';
 
 const Footer = () => {
     return (
