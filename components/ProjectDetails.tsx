@@ -29,12 +29,14 @@ export default function ProjectDetailsTabs({ pageData }: DataProps) {
             <div className='fixed top-0 left-0 w-1/4 min-h-screen pt-[62px] px-[52px] border-r border-[#ECF2F9] bg-white'>
                 <div className=''>
                     <Link href='/' >
-                        <button className='button-container relative h-11 w-11 rounded-full flex items-center justify-center border transition-all delay-300 border-[#ECF2F9] hover:bg-[#ECF2F9]'>
-                            <AnimatedIconWrapper>
-                                <svg className='mt-[15px] ml-3' width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16.0002 6.07106L2.00024 6.07106M2.00024 6.07106L6.50024 10.5M2.00024 6.07106L6.50024 1.5" stroke='#2E3741' strokeWidth="2.14286" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </AnimatedIconWrapper>
+                        <button className='button-container p-[10px] relative rounded-full border-2 transition-colors duration-200 border-[#ECF2F9] hover:bg-[#ECF2F9]'>
+                            <div className="w-5 h-5 relative">
+                                <AnimatedIconWrapper direction="left">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.92874 10.0795C1.9265 9.79534 2.03725 9.52192 2.23661 9.3194L6.73662 4.74834C7.15175 4.32666 7.83012 4.32135 8.2518 4.73648C8.67348 5.15161 8.6788 5.82998 8.26367 6.25166L5.55841 8.99963L17.0001 8.99964C17.5919 8.99964 18.0716 9.47933 18.0716 10.0711C18.0716 10.6628 17.5919 11.1425 17.0001 11.1425L5.61619 11.1425L8.2517 13.7364C8.67344 14.1515 8.67884 14.8298 8.26376 15.2516C7.84869 15.6733 7.17032 15.6787 6.74858 15.2636L2.24858 10.8347C2.04604 10.6353 1.93099 10.3637 1.92874 10.0795Z"  className="fill-current"/>
+                                    </svg>
+                                </AnimatedIconWrapper>
+                            </div>
                         </button>
                     </Link>
 

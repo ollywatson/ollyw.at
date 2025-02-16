@@ -1,12 +1,13 @@
 import React from 'react';
 import EmailButton from './emailbutton';
 import ProfileIcon from './profileicon';
+import GlowIcon from './glowicon';
 
 const Profile = () => {
     return (
         <div className="px-[26px]">
             <div className="flex items-center space-x-3 py-[6px]">
-                <ProfileIcon color="#202123" />
+                <GlowIcon />
                 <p className="text-sm md:text-sm-md font-bold">Olly Watson</p>
             </div>
 
