@@ -40,7 +40,7 @@ export default function MobileNav({ slug, slugItem, projectData, currentProjectC
             return (
                 <button
                     key={caseItem}
-                    className={`flex items-center p-4 justify-between relative w-full h-[62px] ${slugItem === caseItem ? 'bg-[#ECF2F9]' : ''} ${caseItem !== currentProjectCases[0] ? 'border-t-2 border-[#ECF2F9]' : ''}`}
+                    className={`flex items-center p-4 justify-between relative w-full h-[62px] ${slugItem === caseItem ? 'bg-selectorBg' : ''} ${caseItem !== currentProjectCases[0] ? 'border-t border-borderLight' : ''}`}
                     onClick={() => router.push(`/projects/${slug}/${caseItem}`)}
                 >
                     {formattedCaseItem}
@@ -50,14 +50,12 @@ export default function MobileNav({ slug, slugItem, projectData, currentProjectC
     };
 
     return (
-        <div className='relative border-b border-[#ECF2F9] bg-white'>
+        <div className='relative border-b border-borderLight bg-background'>
             <div className='flex items-center justify-between'>
-                <div className='py-6 text-[#4D555F]'>
-                    <h4 className='text-[16px] font-bold text-[#2E3741]'>{projectData[0].name}</h4>
-                    <div className='flex items-center gap-2'>
-                        <p className=''>{projectData[0].role}</p>
-                        <span className='h-1 w-1 rounded-full bg-[#4D555F] mt-px opacity-70'></span>
-                        <p>{projectData[0].year}</p>
+                <div className='py-6'>
+                    <h4 className='text-base md:text-base-md font-bold text-primary'>{projectData[0].name}</h4>
+                    <div className='text-sm md: text-sm-md text-secondary'>
+                        <p className=''>{projectData[0].role}  ·  {projectData[0].year}</p>
                     </div>
                 </div>
                 <button
@@ -79,7 +77,7 @@ export default function MobileNav({ slug, slugItem, projectData, currentProjectC
 
             {/* Navigation Menu */}
             <div
-                className={`absolute w-full flex left-0 top-[calc(100%+20px)] rounded-3xl overflow-hidden flex-col items-start border-2 border-[#ECF2F9] bg-white transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+                className={`absolute w-full flex left-0 top-[calc(100%+20px)] rounded-3xl overflow-hidden flex-col items-start border border-borderLight bg-background transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
                     }`}
             >
                 {renderTabs()}

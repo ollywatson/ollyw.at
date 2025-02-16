@@ -5,7 +5,7 @@ import RecentWorkSection from '@/components/recentwork';
 export default function Home() {
   return (
     <main>
-      <div className="relative max-w-2xl z-10 mx-auto mt-[130px]">
+      <div className="relative max-w-[648px] z-10 mx-auto mt-[130px]">
         <Profile />
         <RecentWorkSection />
       </div>

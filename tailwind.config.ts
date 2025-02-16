@@ -12,25 +12,26 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: '#202123',   // Primary color for text and icons
-        secondary: '#58616B', // Secondary color for text and icons
-        tertiary: '#8290A1',  // Tertiary color for text and icons
-        borderLight: '#ECF2F9',    // Border color
-        buttonBg: '#E6EDF5',   // Background color for buttons
-        blue: '#2D7EFF'
+        primary: '#FFFFFF',   // Primary color for text and icons
+        secondary: '#939393', // Secondary color for text and icons
+        tertiary: '#939393',  // Tertiary color for text and icons
+        borderLight: '#272727',    // Border color
+        buttonBg: "var(--foreground)",   // Background color for buttons
+        selectorBg: '#222222',
       },
       fontFamily: {
         'sans': ['Mona Sans', 'sans-serif'], // Add your font name first, followed by fallback fonts
+        'serif': ['Literata', 'serif'],
       },
       fontSize: {
         'base': ['15px', '26px'],
         'base-md': ['16px', '26px'],
         'sm': ['13px', '22px'],
-        'sm-md': ['14px', '22px']
-
+        'sm-md': ['14px', '22px'],
+        'headline': ['22px', '32px']
       },
       backgroundImage: {
-        'dot-pattern': "radial-gradient(circle, #E9EEF5 10%, transparent 10%)"
+        'dot-pattern': "radial-gradient(circle, #1F1F1F 10%, transparent 10%)"
       },
       backgroundSize: {
         '13px': '13px 13px',

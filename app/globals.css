@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Test Newzald Book';
+  src: url('/fonts/test-newzald-book.woff2') format('woff2'),
+       url('/fonts/test-newzald-book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #FFFFFF;
-  --foreground: #171717;
+  --background: #181818;
+  --foreground: #FFFFFF;
 
   /* Font Variables */
-  --font-funnel-sans: 'Funnel Sans', sans-serif;
   --font-mona-sans: 'Mona Sans', sans-serif;
 }
 
@@ -20,4 +28,27 @@ body {
 
 svg {
   shape-rendering: geometricPrecision;
+}
+
+.inline-link {
+  text-decoration: underline;
+  text-decoration-color: #939393;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-style: wavy;
+  transition: text-decoration-color 200ms ease-in-out;
+}
+
+.inline-link:hover {
+  text-decoration-color: #FFF;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

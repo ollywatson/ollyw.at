@@ -1,10 +1,10 @@
 import '../app/globals.css';
-import { Funnel_Sans, Mona_Sans } from 'next/font/google';
+import { Literata, Mona_Sans } from 'next/font/google';
 
 // Load the fonts
-const funnelSans = Funnel_Sans({
+const literata = Literata({
   subsets: ['latin'],
-  variable: '--font-funnel-sans',
+  variable: '--font-literata',
   weight: ['300', '400', '500', '600', '700', '800'], // Specify weights as an array
 });
 
@@ -25,14 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${funnelSans.variable} ${monaSans.variable}`}>
+    <html lang="en" className={`${monaSans.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body>
         {children}
         <div className="fixed inset-0 z-0 bg-dot-pattern bg-13px h-full w-full"></div>
-        <div className="absolute inset-0 z-1 bg-gradient-to-b from-white to-transparent"></div>
+        {/* <div id="mask-gradient" className="absolute inset-0 z-1 bg-gradient-to-b from-[#181818] to-transparent h-screen"></div> */}
       </body>
     </html>
   );

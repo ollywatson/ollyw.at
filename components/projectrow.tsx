@@ -22,7 +22,7 @@ const ProjectRow = async ({ project }: { project: { name: string; role: string; 
     return (
         <Link
             href={hasCases ? `/projects/${slug}/${currentProjectCases[0]}` : link}
-            className={`button-container flex justify-between items-center p-[20px] text-primary rounded-[26px] transition-colors duration-300 hover:bg-buttonBg ${color} relative group`}
+            className={`button-container flex justify-between items-center p-[20px] text-primary rounded-[26px] transition-colors duration-300 hover:bg-selectorBg ${color} relative group`}
             {...(isExternal && !hasCases && {
                 target: "_blank",
                 rel: "noopener noreferrer"

@@ -45,7 +45,7 @@ export default function Sidebar({ slug, slugItem, projectData, currentProjectCas
             return (
                 <button
                     key={caseItem}
-                    className={`flex items-center justify-between relative w-full h-[62px] border-b text-left z-20 ${slugItem === caseItem ? 'after:rounded-2xl  border-transparent  after:absolute after:w-[calc(100%+40px)] after:bg-[#ECF2F9]  after:-z-10 after:h-full after:top-0 after:left-[-20px] after:transition-all' : ' border-[#ECF2F9]'}`}
+                    className={`flex items-center justify-between relative w-full h-[62px] border-b text-left text-sm md:text-sm-md font-bold z-20 ${slugItem === caseItem ? 'after:rounded-2xl  border-transparent  after:absolute after:w-[calc(100%+40px)] after:bg-selectorBg  after:-z-10 after:h-full after:top-0 after:left-[-20px] after:transition-all' : ' border-borderLight'}`}
                     onClick={() => router.push(`/projects/${slug}/${caseItem}`)}
                 >
                     {formattedCaseItem}
@@ -56,10 +56,10 @@ export default function Sidebar({ slug, slugItem, projectData, currentProjectCas
 
 
     return (
-        <div className='fixed top-0 left-0 lg:w-1/4 md:w-2/5 min-h-screen pt-[62px] px-[52px] border-r border-[#ECF2F9] bg-white'>
+        <div className='fixed top-0 left-0 lg:w-1/4 md:w-2/5 min-h-screen pt-[62px] px-[52px] border-r border-borderLight bg-background'>
             <div className=''>
                 <Link href='/' >
-                    <button className='button-container p-[10px] relative rounded-full border-2 transition-colors duration-200 border-[#ECF2F9] hover:bg-[#ECF2F9]'>
+                    <button className='button-container p-[10px] relative rounded-full border-2 transition-colors duration-200 border-borderLight hover:bg-selectorBg hover:border-selectorBg'>
                         <div className="w-5 h-5 relative">
                             <AnimatedIconWrapper direction="left">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,9 +72,9 @@ export default function Sidebar({ slug, slugItem, projectData, currentProjectCas
 
                 {/* <BackButton /> */}
                 <div className='mt-6 mb-16 text-[#4D555F]'>
-                    <h4 className='text-[16px] font-bold text-[#2E3741]'>{projectData[0].name}</h4>
-                    <p className='mt-3'>{projectData[0].role}</p>
-                    <p>{projectData[0].year}</p>
+                    <h4 className='text-base md:text-base-md font-bold text-primary'>{projectData[0].name}</h4>
+                    <p className='mt-3 text-sm md:text-sm-md text-secondary'>{projectData[0].role}</p>
+                    <p className='text-sm md:text-sm-md text-secondary'>{projectData[0].year}</p>
                 </div>
             </div>
 
