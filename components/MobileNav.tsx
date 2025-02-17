@@ -53,7 +53,7 @@ export default function MobileNav({ slug, slugItem, projectData, currentProjectC
         <div className='relative border-b border-borderLight bg-background'>
             <div className='flex items-center justify-between'>
                 <div className='py-6'>
-                    <h4 className='text-base font-bold text-primary'>{projectData[0].name}</h4>
+                    <h4 className='text-base font-semibold text-primary'>{projectData[0].name}</h4>
                     <div className='text-sm text-secondary'>
                         <p className=''>{projectData[0].role}  ·  {projectData[0].year}</p>
                     </div>

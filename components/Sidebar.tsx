@@ -71,7 +71,7 @@ export default function Sidebar({ slug, slugItem, projectData, currentProjectCas
 
                 {/* <BackButton /> */}
                 <div className='mt-6 mb-16 text-[#4D555F]'>
-                    <h4 className='text-base md:text-base-md font-bold text-primary'>{projectData[0].name}</h4>
+                    <h4 className='text-base md:text-base-md font-semibold text-primary'>{projectData[0].name}</h4>
                     <p className='mt-3 text-sm md:text-sm-md text-secondary'>{projectData[0].role}</p>
                     <p className='text-sm md:text-sm-md text-secondary'>{projectData[0].year}</p>
                 </div>

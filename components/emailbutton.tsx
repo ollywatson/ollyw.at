@@ -11,7 +11,7 @@ const EmailButton = () => {
                     </svg>
                 </AnimatedIconWrapper>
             </div>
-            <span className="text-sm font-bold">Contact</span>
+            <span className="text-sm font-semibold">Contact</span>
         </button>
     );
 }
