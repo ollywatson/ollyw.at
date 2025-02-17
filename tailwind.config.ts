@@ -15,21 +15,20 @@ export default {
         primary: '#FFFFFF',   // Primary color for text and icons
         secondary: '#C0C0C0', // Secondary color for text and icons
         tertiary: '#939393',  // Tertiary color for text and icons
-        borderLight: '#272727',    // Border color
-        buttonBg: "var(--foreground)",   // Background color for buttons
+        borderLight: '#333333',    // Border color
+        buttonBg: '#333333',   // Background color for buttons
         selectorBg: '#222222',
       },
       fontFamily: {
         'sans': ['Mona Sans', 'sans-serif'], // Add your font name first, followed by fallback fonts
-        'serif': ['Literata', 'serif'],
+        'serif': ['FreightText Pro Book', 'serif'],
       },
       fontSize: {
         'base': ['15px', '26px'],
         'base-md': ['16px', '26px'],
         'sm': ['13px', '22px'],
         'sm-md': ['14px', '22px'],
-        'headline': ['20px', '32px'],
-        'headline-md': ['22px', '32px'],
+        'headline': ['21px', '26px'],
       },
       backgroundImage: {
         'dot-pattern': "radial-gradient(circle, #1F1F1F 10%, transparent 10%)"

@@ -58,7 +58,7 @@ export default function Sidebar({ slug, slugItem, projectData, currentProjectCas
         <div className='fixed top-0 left-0 lg:w-1/4 md:w-2/5 min-h-screen pt-[62px] px-[52px] border-r border-borderLight bg-background'>
             <div className=''>
                 <Link href='/' >
-                    <button className='button-container p-[10px] relative rounded-full border-2 transition-colors duration-200 border-borderLight hover:bg-selectorBg hover:border-selectorBg'>
+                    <button className='button-container p-[10px] relative rounded-full border-2 transition-colors duration-200 border-borderLight hover:bg-buttonBg hover:border-buttonBg'>
                         <div className="w-5 h-5 relative">
                             <AnimatedIconWrapper direction="left">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

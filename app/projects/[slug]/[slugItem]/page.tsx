@@ -37,7 +37,7 @@ export default async function ProjectDetails({ params }: PageProps) {
       {
         content ?
           <div className='w-full lg:w-3/4 md:w-3/5 md:mt-12 ml-auto mt-6'>
-            <div className='lg:w-1/2 md:w-10/12 mx-auto text-[16px] text-primary'>
+            <div className='lg:w-1/2 md:w-10/12 mx-auto text-base text-primary'>
               <main className=''>
                 <article>
                   <Markdown

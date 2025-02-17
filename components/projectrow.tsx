@@ -39,10 +39,10 @@ const ProjectRow = async ({ project }: { project: { name: string; role: string; 
                     />
                 </div>
                 <div className="w-full">
-                    <p className="text-base md:text-base-md font-bold">{name}</p>
+                    <p className="text-base font-bold">{name}</p>
                     <div className="flex items-center justify-between">
-                        <p className="text-base md:text-base-md text-tertiary">{role}</p>
-                        <p className="text-base md:text-base-md text-tertiary">{year}</p>
+                        <p className="text-sm text-tertiary">{role}</p>
+                        <p className="text-sm text-tertiary">{year}</p>
                     </div>
                 </div>
             </div>
