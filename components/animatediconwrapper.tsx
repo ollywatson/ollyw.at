@@ -13,11 +13,11 @@ const AnimatedIconWrapper: React.FC<AnimatedIconWrapperProps> = ({ children, dir
                 opacity: 1;
             }
             50% {
-                transform: ${direction === 'left' ? 'translate(-50%, 0)' : direction === 'right' ? 'translate(50%, 0)' : direction === 'up' ? 'translate(0, -50%)' : direction === 'down' ? 'translate(0, 50%)' : direction === 'top-left' ? 'translate(-75%, -75%)' : direction === 'top-right' ? 'translate(75%, -75%)' : direction === 'bottom-left' ? 'translate(-75%, 75%)' : direction === 'bottom-right' ? 'translate(75%, 75%)' : 'translate(75%, -75%)'};
+                transform: ${direction === 'left' ? 'translate(-50%, 0)' : direction === 'right' ? 'translate(50%, 0)' : direction === 'up' ? 'translate(0, -50%)' : direction === 'down' ? 'translate(0, 50%)' : direction === 'top-left' ? 'translate(-50%, -50%)' : direction === 'top-right' ? 'translate(50%, -50%)' : direction === 'bottom-left' ? 'translate(-50%, 50%)' : direction === 'bottom-right' ? 'translate(50%, 50%)' : 'translate(50%, -50%)'};
                 opacity: 0;
             }
             50.1% {
-                transform: ${direction === 'left' ? 'translate(50%, 0)' : direction === 'right' ? 'translate(-50%, 0)' : direction === 'up' ? 'translate(0, 50%)' : direction === 'down' ? 'translate(0, -50%)' : direction === 'top-left' ? 'translate(75%, 75%)' : direction === 'top-right' ? 'translate(-75%, 75%)' : direction === 'bottom-left' ? 'translate(75%, -75%)' : direction === 'bottom-right' ? 'translate(-75%, -75%)' : 'translate(-75%, 75%)'};
+                transform: ${direction === 'left' ? 'translate(50%, 0)' : direction === 'right' ? 'translate(-50%, 0)' : direction === 'up' ? 'translate(0, 50%)' : direction === 'down' ? 'translate(0, -50%)' : direction === 'top-left' ? 'translate(50%, 50%)' : direction === 'top-right' ? 'translate(-50%, 50%)' : direction === 'bottom-left' ? 'translate(50%, -50%)' : direction === 'bottom-right' ? 'translate(-50%, -50%)' : 'translate(-50%, 50%)'};
                 opacity: 0;
             }
             100% {

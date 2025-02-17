@@ -17,7 +17,7 @@ export default {
         tertiary: '#939393',  // Tertiary color for text and icons
         borderLight: '#333333',    // Border color
         buttonBg: '#333333',   // Background color for buttons
-        selectorBg: '#222222',
+        selectorBg: '#242424',
       },
       fontFamily: {
         'sans': ['Mona Sans', 'sans-serif'], // Add your font name first, followed by fallback fonts

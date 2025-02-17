@@ -8,13 +8,13 @@ interface MiniButtonProps {
 
 const MiniButton: React.FC<MiniButtonProps> = ({ text, icon }) => {
     return (
-        <button className="button-container flex items-center justify-center pl-[14px] pr-[18px] py-1 bg-selectorBg hover:bg-buttonBg rounded-full text-primary relative overflow-hidden transition-colors duration-200">
+        <button className="button-container flex items-center justify-center px-[16px] py-1 bg-selectorBg hover:bg-buttonBg rounded-full text-primary relative overflow-hidden transition-colors duration-200">
             <span className="text-sm">{text}</span>
             <div className="w-[18px] h-[18px] relative ml-[6px]">
                 <AnimatedIconWrapper direction="top-right">
                     {icon === 'arrow' ? (
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 14L14 4M14 4L6.14286 4M14 4V11.8571" stroke="white" strokeWidth="1.28571" strokeLinecap="square"/>
+                            <path d="M5 13L14 4M14 4L6.92857 4M14 4V11.0714" stroke="white" stroke-width="1.25" stroke-linecap="square"/>
                         </svg>
                     ) : (
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

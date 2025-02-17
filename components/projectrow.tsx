@@ -32,8 +32,8 @@ const ProjectRow = async ({ project }: { project: { name: string; role: string; 
                     <Image
                         src={icon} // Use destructured imageUrl
                         alt={`${name} logo`}
-                        width={40}
-                        height={40}
+                        width={36}
+                        height={36}
                         className="rounded-lg"
                         priority // Add priority for above-the-fold images
                     />
