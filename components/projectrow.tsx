@@ -18,7 +18,6 @@ const ProjectRow = async ({ project }: { project: { name: string; role: string; 
         .filter((project: Project) => project?.slug === slug) // Filter by slug
         .flatMap((project: Project) => project.cases); // Extract and flatten the cases array
 
-    console.log(currentProjectCases);
     return (
         <Link
             href={hasCases ? `/projects/${slug}/${currentProjectCases[0]}` : link}
