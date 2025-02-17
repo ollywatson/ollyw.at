@@ -42,8 +42,8 @@ const ProjectRow = async ({ project }: { project: { name: string; role: string; 
                 <div className="w-full">
                     <p className="text-base md:text-base-md font-bold">{name}</p>
                     <div className="flex items-center justify-between">
-                        <p className="text-sm md:text-sm-md text-tertiary">{role}</p>
-                        <p className="text-sm md:text-sm-md text-tertiary">{year}</p>
+                        <p className="text-base md:text-base-md text-tertiary">{role}</p>
+                        <p className="text-base md:text-base-md text-tertiary">{year}</p>
                     </div>
                 </div>
             </div>

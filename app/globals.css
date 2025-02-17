@@ -33,9 +33,9 @@ svg {
 .inline-link {
   text-decoration: underline;
   text-decoration-color: #939393;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  /* text-decoration-style: wavy; */
   transition: text-decoration-color 200ms ease-in-out;
 }
 
