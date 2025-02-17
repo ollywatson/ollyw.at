@@ -8,7 +8,7 @@ import FeatureIcon from './featureicon';
 
 const Profile = () => {
     return (
-        <div className="pl-[26px]">
+        <div className="px-[26px]">
             <div className="space-y-[39px]">
                 <FeatureIcon />
                 <p className="pr-[52px] text-headline font-serif text-secondary"><span className="text-primary">Olly Watson</span> is a product designer from the UK, currently working at <Link href="https://www.deliveroo.design/" className="inline-link text-primary">Deliveroo</ Link></p>
