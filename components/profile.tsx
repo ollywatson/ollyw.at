@@ -16,7 +16,7 @@ const Profile = () => {
             <div className="mt-[26px]">
                 <p className="text-base text-secondary">Over the past decade, I’ve worked at many stages of the product development life cycle, from ethnographic research to design engineering. I designed and built <Link href="https://www.deliveroo.design/" className="inline-link text-primary">Voicey</Link>, an iPhone app for voice messaging.</p>
             </div>
-            <div className="mt-[26px] pb-[8px]">
+            <div className="mt-[26px] pb-[12px]">
                 <EmailButton />
             </div>
         </div>

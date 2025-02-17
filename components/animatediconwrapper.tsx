@@ -26,7 +26,7 @@ const AnimatedIconWrapper: React.FC<AnimatedIconWrapperProps> = ({ children, dir
             }
         }
         .button-container:hover .animated-icon {
-            animation: icon-move 0.35s cubic-bezier(0.25, 1.5, 0.64, 1) forwards;
+            animation: icon-move 0.3s cubic-bezier(0.25, 1.5, 0.64, 1) forwards;
         }
         .animated-icon {
             position: absolute;
