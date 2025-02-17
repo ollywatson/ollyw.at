@@ -13,7 +13,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: '#FFFFFF',   // Primary color for text and icons
-        secondary: '#C3C3C3', // Secondary color for text and icons
+        secondary: '#C0C0C0', // Secondary color for text and icons
         tertiary: '#939393',  // Tertiary color for text and icons
         borderLight: '#272727',    // Border color
         buttonBg: "var(--foreground)",   // Background color for buttons
