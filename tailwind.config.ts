@@ -24,11 +24,10 @@ export default {
         'serif': ['FreightText Pro Book', 'serif'],
       },
       fontSize: {
-        'base': ['15px', '26px'],
-        'base-md': ['16px', '26px'],
-        'sm': ['13px', '22px'],
-        'sm-md': ['14px', '22px'],
-        'headline': ['21px', '26px'],
+        'base': ['16px', '28px'],
+        'sm': ['14px', '24px'],
+        'headline': ['22px', '32px'],
+        'headline-md': ['26px', '36px'],
       },
       backgroundImage: {
         'dot-pattern': "radial-gradient(circle, #1F1F1F 10%, transparent 10%)"
