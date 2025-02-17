@@ -2,7 +2,9 @@ import matter from "gray-matter";
 import fs from "fs/promises";
 import path from "path";
 
-const contentDir = "./content";
+// const contentDir = "./content";
+const contentDir = path.join(process.cwd(), "content");
+
 
 export const getProjectData = async (slug: string, activeContent: string) => {
   try {
