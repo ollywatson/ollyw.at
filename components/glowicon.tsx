@@ -91,9 +91,10 @@ const GlowIcon = () => {
                         display: flex;
                         align-items: center;
                         width: 40px;
+                        position: relative;
                     }
 
-                    .card-container:hover .tooltip {
+                    .main-container:hover .tooltip {
                         opacity: 1;
                         display: block;
                     }
@@ -104,8 +105,8 @@ const GlowIcon = () => {
                         transition: opacity .5s;
                         pointer-events: none;
                         position: absolute;
-                        left: 72px;
-                        top: -4px;
+                        left: 48px;
+                        bottom: 20px;
                         display: none;
                     }
 
@@ -119,19 +120,21 @@ const GlowIcon = () => {
                     }
                 `}
             </style>
-            <div className="card-container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                <div className="glow-icon card bg-background px-[2px] overflow-visible relative">
-                    <div className="text-primary transition-colors duration-200 rounded-full overflow-visible">
-                        <svg className="scale-svg" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18.6126 19.4241C16.556 21.399 13.321 21.3675 11.3873 19.3536" className="stroke-current" strokeWidth="2" strokeLinecap="round"/>
-                            <path d="M14.2966 7.62549C14.5382 6.97252 15.4618 6.97253 15.7034 7.62549L16.5009 9.78063C16.5768 9.98592 16.7387 10.1478 16.944 10.2237L19.0991 11.0212C19.7521 11.2628 19.7521 12.1864 19.0991 12.428L16.944 13.2255C16.7387 13.3014 16.5768 13.4633 16.5009 13.6686L15.7034 15.8237C15.4618 16.4767 14.5382 16.4767 14.2966 15.8237L13.4991 13.6686C13.4232 13.4633 13.2613 13.3014 13.056 13.2255L10.9009 12.428C10.2479 12.1864 10.2479 11.2628 10.9009 11.0212L13.056 10.2237C13.2613 10.1478 13.4232 9.98592 13.4991 9.78063L14.2966 7.62549Z" className="fill-current"/>
-                        </svg>
+            <div className="relative main-container">
+                <div className="card-container rounded-full" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                    <div className="glow-icon card bg-background px-[2px] overflow-visible relative">
+                        <div className="text-primary transition-colors duration-200 rounded-full overflow-visible">
+                            <svg className="scale-svg" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.6126 19.4241C16.556 21.399 13.321 21.3675 11.3873 19.3536" className="stroke-current" strokeWidth="2" strokeLinecap="round"/>
+                                <path d="M14.2966 7.62549C14.5382 6.97252 15.4618 6.97253 15.7034 7.62549L16.5009 9.78063C16.5768 9.98592 16.7387 10.1478 16.944 10.2237L19.0991 11.0212C19.7521 11.2628 19.7521 12.1864 19.0991 12.428L16.944 13.2255C16.7387 13.3014 16.5768 13.4633 16.5009 13.6686L15.7034 15.8237C15.4618 16.4767 14.5382 16.4767 14.2966 15.8237L13.4991 13.6686C13.4232 13.4633 13.2613 13.3014 13.056 13.2255L10.9009 12.428C10.2479 12.1864 10.2479 11.2628 10.9009 11.0212L13.056 10.2237C13.2613 10.1478 13.4232 9.98592 13.4991 9.78063L14.2966 7.62549Z" className="fill-current"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
                 {isHovered && (
-                    <div className="tooltip flex text-sm text-medium rounded-full bg-selectorBg px-4 py-1 space-x-1">
-                        <span className="text-sm text-tertiary font-medium">GPT4</span>
-                        <span><Typed text="Click to hear a fact about Olly's work" /></span>
+                    <div className="tooltip text-sm text-medium rounded-full bg-selectorBg px-4 py-1 space-x-1">
+                        <span className="text-sm text-tertiary font-medium">GPT4 </span>
+                        <span><Typed text="A perfect balance, Function wrapped in quiet grace, Thoughtful, timeless flow." /></span>
                     </div>
                 )}
             </div>
