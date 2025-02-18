@@ -26,6 +26,7 @@ export default {
       fontSize: {
         'base': ['16px', '28px'],
         'sm': ['14px', '24px'],
+        'caption': ['12px', '16px'],
         'headline': ['22px', '32px'],
         'headline-md': ['26px', '36px'],
       },

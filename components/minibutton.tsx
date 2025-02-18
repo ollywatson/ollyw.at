@@ -14,7 +14,7 @@ const MiniButton: React.FC<MiniButtonProps> = ({ text, icon }) => {
                 <AnimatedIconWrapper direction="top-right">
                     {icon === 'arrow' ? (
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L14 4M14 4L6.92857 4M14 4V11.0714" stroke="white" stroke-width="1.25" stroke-linecap="square"/>
+                            <path d="M5 13L14 4M14 4L6.92857 4M14 4V11.0714" stroke="white" strokeWidth="1.25" strokeLinecap="square"/>
                         </svg>
                     ) : (
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

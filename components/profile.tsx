@@ -11,8 +11,8 @@ const Profile = () => {
     return (
         <div className="px-[26px]">
             <div className="space-y-16">
-                <FeatureIcon />
-                {/* <GlowIcon /> */}
+                {/* <FeatureIcon /> */}
+                <GlowIcon />
                 <p className="pr-8 text-headline font-serif text-secondary"><span className="text-primary">Olly Watson</span> is a product designer from the UK, currently working at <Link href="https://www.deliveroo.design/" className="inline-link text-primary">Deliveroo</ Link>.</p>
             </div>
             <div className="mt-8">

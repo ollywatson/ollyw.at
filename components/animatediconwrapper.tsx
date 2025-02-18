@@ -13,11 +13,11 @@ const AnimatedIconWrapper: React.FC<AnimatedIconWrapperProps> = ({ children, dir
                 opacity: 1;
             }
             50% {
-                transform: ${direction === 'left' ? 'translate(-50%, 0)' : direction === 'right' ? 'translate(50%, 0)' : direction === 'up' ? 'translate(0, -50%)' : direction === 'down' ? 'translate(0, 50%)' : direction === 'top-left' ? 'translate(-50%, -50%)' : direction === 'top-right' ? 'translate(50%, -50%)' : direction === 'bottom-left' ? 'translate(-50%, 50%)' : direction === 'bottom-right' ? 'translate(50%, 50%)' : 'translate(50%, -50%)'};
+                transform: ${direction === 'left' ? 'translate(-50%, 0)' : direction === 'right' ? 'translate(50%, 0)' : direction === 'up' ? 'translate(0, -50%)' : direction === 'down' ? 'translate(0, 50%)' : direction === 'top-left' ? 'translate(-70%, -70%)' : direction === 'top-right' ? 'translate(70%, -70%)' : direction === 'bottom-left' ? 'translate(-70%, 70%)' : direction === 'bottom-right' ? 'translate(70%, 70%)' : 'translate(70%, -70%)'};
                 opacity: 0;
             }
             50.1% {
-                transform: ${direction === 'left' ? 'translate(50%, 0)' : direction === 'right' ? 'translate(-50%, 0)' : direction === 'up' ? 'translate(0, 50%)' : direction === 'down' ? 'translate(0, -50%)' : direction === 'top-left' ? 'translate(50%, 50%)' : direction === 'top-right' ? 'translate(-50%, 50%)' : direction === 'bottom-left' ? 'translate(50%, -50%)' : direction === 'bottom-right' ? 'translate(-50%, -50%)' : 'translate(-50%, 50%)'};
+                transform: ${direction === 'left' ? 'translate(50%, 0)' : direction === 'right' ? 'translate(-50%, 0)' : direction === 'up' ? 'translate(0, 50%)' : direction === 'down' ? 'translate(0, -50%)' : direction === 'top-left' ? 'translate(70%, 70%)' : direction === 'top-right' ? 'translate(-70%, 70%)' : direction === 'bottom-left' ? 'translate(70%, -70%)' : direction === 'bottom-right' ? 'translate(-70%, -70%)' : 'translate(-70%, 70%)'};
                 opacity: 0;
             }
             100% {
@@ -26,7 +26,7 @@ const AnimatedIconWrapper: React.FC<AnimatedIconWrapperProps> = ({ children, dir
             }
         }
         .button-container:hover .animated-icon {
-            animation: icon-move 0.3s cubic-bezier(0.25, 1.5, 0.64, 1) forwards;
+            animation: icon-move 0.35s cubic-bezier(0.25, 1.5, 0.64, 1) forwards;
         }
         .animated-icon {
             position: absolute;
