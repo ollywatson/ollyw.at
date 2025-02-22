@@ -1,12 +1,13 @@
 ---
 name: Voicey
-role: Personal Side Project
-timeline: 2021 - Present
+role: Personal side project
+timeline: 2021+
 icon: voicey-icon.svg
-color: "#408FF5"
-link: https://www.deliveroo.design/
+color: "#1681FF"
+link: https://apps.apple.com/gb/app/voicey/id1601249536
+linkname: App store
 cases:
-  - user-interface
-  - interactions
+  - interface
   - brand
+  - interactions
 ---

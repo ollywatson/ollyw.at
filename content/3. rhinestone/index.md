@@ -1,12 +1,9 @@
 ---
 name: Rhinestone
-role: Freelance Side Project
-timeline: 2022 – 2023
+role: Brand & illustration
+timeline: 2022+
 icon: rhinestone-icon.svg
-color: "#05003B"
-link: https://www.deliveroo.design/
-cases:
-  - user-interface
-  - interactions
-  - brand
+color: "#4F41EF"
+link: https://www.rhinestone.wtf/
+linkname: Website
 ---

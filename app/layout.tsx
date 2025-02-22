@@ -1,11 +1,12 @@
 import '../app/globals.css';
-import { Literata, Mona_Sans } from 'next/font/google';
+import { Literata, Mona_Sans, Outfit } from 'next/font/google';
 
 // Load the fonts
 const literata = Literata({
   subsets: ['latin'],
-  variable: '--font-literata',
+  variable: '--literata',
   weight: ['300', '400', '500', '600', '700', '800'], // Specify weights as an array
+  style: ['italic'], // Include italic style
 });
 
 const monaSans = Mona_Sans({

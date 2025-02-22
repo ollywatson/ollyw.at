@@ -18,17 +18,22 @@ export default {
         borderLight: '#333333',    // Border color
         buttonBg: '#333333',   // Background color for buttons
         selectorBg: '#242424',
+        subtleBg: '#1F1F1F',
+        isCurrentBg: '#424242',
+        selectorBgTransparent: 'rgba(255, 255, 255, 0.05)',
       },
       fontFamily: {
         'sans': ['Mona Sans', 'sans-serif'], // Add your font name first, followed by fallback fonts
-        'serif': ['FreightText Pro Book', 'serif'],
+        'serif': ['Literata', 'serif'],
       },
       fontSize: {
         'base': ['16px', '28px'],
-        'sm': ['14px', '24px'],
+        'sm': ['14px', '22px'],
+        'sm-reading': ['14px', '24px'],
         'caption': ['12px', '16px'],
-        'headline': ['22px', '32px'],
+        'headline': ['24px', '40px'],
         'headline-md': ['26px', '36px'],
+        'serif-adjust': ['15px', '22px'],
       },
       backgroundImage: {
         'dot-pattern': "radial-gradient(circle, #1F1F1F 10%, transparent 10%)"

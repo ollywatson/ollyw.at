@@ -1,10 +1,48 @@
 'use client';
 
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useState, useEffect, useRef } from 'react';
 import Typed from './typed';
+import HoverFact from './hoverfact';
 
 const GlowIcon = () => {
-    const [isHovered, setIsHovered] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const tooltipRef = useRef(null);
+
+    useEffect(() => {
+        const handleOutsideClick = (event: Event) => {
+            const target = event.target as HTMLElement;
+            if (!target.closest('.card-container')) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener('click', handleOutsideClick as EventListener);
+
+        let timer: NodeJS.Timeout;
+
+        if (isOpen) {
+            timer = setTimeout(() => {
+                setIsOpen(false);
+            }, 10000);
+        }
+
+        return () => {
+            document.removeEventListener('click', handleOutsideClick as EventListener);
+            clearTimeout(timer);
+        };
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (isOpen) {
+            tooltipRef.current.style.transition = 'opacity 0.25s cubic-bezier(0.2, 1.5, 0.64, 1), transform 0.2s cubic-bezier(0.25, 1.5, 0.64, 1)';
+            tooltipRef.current.style.opacity = '0';
+            tooltipRef.current.style.transform = 'scale(0.5)';
+            setTimeout(() => {
+                tooltipRef.current.style.opacity = '1';
+                tooltipRef.current.style.transform = 'scale(1)';
+            }, 0);
+        }
+    }, [isOpen]);
 
     return (
         <>
@@ -38,6 +76,14 @@ const GlowIcon = () => {
                     font-family: cursive;
                     }
 
+                    .card-container {
+                    transition: all .1s;
+                    }
+
+                    .card-container:active {
+                    transform: scale(0.975);
+                    }
+
                     .card::before {
                     position: absolute;
                     content: "";
@@ -52,7 +98,7 @@ const GlowIcon = () => {
                     transition: all .3s;
                     }
 
-                    .card:hover:before {
+                    .isOpen .card::before, .card:hover:before {
                     transform: scale(1.05);
                     background-image: linear-gradient(
                         var(--rotate)
@@ -83,7 +129,7 @@ const GlowIcon = () => {
                     opacity: 0;
                     }
 
-                    .card:hover:after {
+                    .isOpen .card::after, .card:hover:after {
                         opacity: 1;
                     }
 
@@ -94,34 +140,43 @@ const GlowIcon = () => {
                         position: relative;
                     }
 
-                    .main-container:hover .tooltip {
-                        opacity: 1;
-                        display: block;
-                    }
-
                     .tooltip {
                         border-radius: 20px 20px 20px 0;
-                        opacity: 0;
-                        transition: opacity .5s;
                         pointer-events: none;
                         position: absolute;
                         left: 48px;
                         bottom: 20px;
-                        display: none;
+                        transform-origin: bottom left;
+                    }
+
+                    .tooltip-cursor {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: white;
+                        animation: pulse-animation 2s infinite;
+                        display: inline-block;
+                        transform-origin: center;
+                    }
+
+                    @keyframes pulse-animation {
+                        0% { transform: scale(1); }
+                        50% { transform: scale(1.2); }
+                        100% { transform: scale(1); }
                     }
 
                     @keyframes spin {
                     0% {
                         --rotate: 0deg;
                     }
-                    100% {
+                     100% {
                         --rotate: 360deg;
                     }
                     }
                 `}
             </style>
-            <div className="relative main-container">
-                <div className="card-container rounded-full" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            <div className={`relative main-container ${isOpen ? 'isOpen' : ''}`}>
+                <div className="card-container rounded-full" onClick={() => setIsOpen(!isOpen)}>
                     <div className="glow-icon card bg-background px-[2px] overflow-visible relative">
                         <div className="text-primary transition-colors duration-200 rounded-full overflow-visible">
                             <svg className="scale-svg" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,10 +186,11 @@ const GlowIcon = () => {
                         </div>
                     </div>
                 </div>
-                {isHovered && (
-                    <div className="tooltip text-sm text-medium rounded-full bg-selectorBg px-4 py-1 space-x-1">
-                        <span className="text-sm text-tertiary font-medium">GPT4 </span>
-                        <span><Typed text="A perfect balance, Function wrapped in quiet grace, Thoughtful, timeless flow." /></span>
+                {isOpen && (
+                    <div ref={tooltipRef} className="tooltip text-sm text-medium rounded-full bg-selectorBg px-4 pt-2 pb-[10px] space-x-1 mr-6">
+                        <span className="text-sm text-tertiary font-medium">GPT3.5 </span>
+                        <span><HoverFact /></span>
+                        <span className="tooltip-cursor"></span>
                     </div>
                 )}
             </div>

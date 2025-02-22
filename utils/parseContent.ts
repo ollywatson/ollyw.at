@@ -11,6 +11,8 @@ interface Project {
     role: string;
     year: string;
     link: string;
+    linkname: string;
+    linktype: string;
     icon: string;
     color: string;
     hasCases: boolean;
@@ -39,6 +41,8 @@ export const parseContent = async (): Promise<Project[]> => {
           role: data.role || "",
           year: data.timeline || "",
           link: data.link || "",
+          linkname: data.linkname || "",
+          linktype: data.linktype || "external",
           icon: `/${data.icon || "deliveroo-icon.png"}`,
           color: data.color || "#000000",
           hasCases,

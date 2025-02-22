@@ -10,6 +10,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Banana Grotesk Regular';
+  src: url('/fonts/Banana_Grotesk_Regular.woff2') format('woff2'),
+       url('/fonts/Banana_Grotesk_Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background: #181818;
   --foreground: #FFFFFF;
@@ -23,6 +31,10 @@ body {
   background: var(--background);
   font-family: var(--font-mona-sans);
   @apply antialiased;
+}
+
+p {
+  font-feature-settings: "ss05" 1;
 }
 
 svg {
