@@ -31,8 +31,8 @@ export default {
         'sm': ['14px', '22px'],
         'sm-reading': ['14px', '24px'],
         'caption': ['12px', '16px'],
-        'headline': ['24px', '40px'],
-        'headline-md': ['26px', '36px'],
+        'headline': ['20px', '32px'],
+        'headline-md': ['24px', '40px'],
         'serif-adjust': ['15px', '22px'],
       },
       backgroundImage: {

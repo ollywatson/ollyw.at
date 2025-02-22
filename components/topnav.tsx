@@ -63,7 +63,7 @@ export default function TopNav({ slug, slugItem, projectData, currentProjectCase
     };
 
     return (
-        <div className={`w-full pt-[120px] px-6 pb-4 md:px-[48px] lg:px-[120px] bg-background space-y-2 ${isSticky ? 'sticky top-[-140px]' : ''}`}>
+        <div className={`w-full pt-[120px] px-5 pb-4 md:px-[48px] lg:px-[120px] bg-background space-y-2 ${isSticky ? 'sticky top-[-140px]' : ''}`}>
             <p className={`text-base font-semibold text-primary ${isSticky ? 'opacity-0' : ''}`}>{projectData[0].name}</p>
             <div className="relative">
                 <p className={`hidden xl:block w-full text-sm text-tertiary absolute text-center pt-1 ${isSticky ? 'opacity-100' : 'opacity-0'}`}><span className="font-semibold pr-1">Olly Watson</span>  /  <span className="font-semibold text-primary pl-1">{projectData[0].name}</span></p>

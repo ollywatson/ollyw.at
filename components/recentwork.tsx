@@ -4,7 +4,7 @@ import ProjectBox from './projectbox';
 const RecentWorkSection = () => {
     return (
         <div className="mt-20">
-            <p className="text-serif-adjust text-tertiary font-serif px-6">Work</p>
+            <p className="text-serif-adjust text-tertiary font-serif px-5">Work</p>
             <ProjectBox />
         </div>
     );

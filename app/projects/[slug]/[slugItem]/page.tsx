@@ -34,7 +34,7 @@ export default async function ProjectDetails({ params }: PageProps) {
       {
         content ?
           <div className='w-full mt-20'>
-            <div className='px-6 md:px-[48px] lg:px-[120px] text-base text-primary'>
+            <div className='px-5 md:px-[48px] lg:px-[120px] text-base text-primary'>
               <main>
                 <article className="flex">
                   <Markdown
@@ -52,7 +52,7 @@ export default async function ProjectDetails({ params }: PageProps) {
                         h1: {
                           component: 'h1',
                           props: {
-                            className: 'text-headline font-serif italic text-primary xl:ml-[740px] 2xl:ml-[912px] pb-2 xl:pr10 2xl:pr-20', // Tailwind classes
+                            className: 'text-headline md:text-headline-md font-serif italic text-primary xl:ml-[740px] 2xl:ml-[912px] pb-2 xl:pr10 2xl:pr-20', // Tailwind classes
                           },
                         },
 

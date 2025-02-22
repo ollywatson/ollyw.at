@@ -187,7 +187,7 @@ const GlowIcon = () => {
                     </div>
                 </div>
                 {isOpen && (
-                    <div ref={tooltipRef} className="tooltip text-sm text-medium rounded-full bg-selectorBg px-4 pt-2 pb-[10px] space-x-1 mr-6">
+                    <div ref={tooltipRef} className="tooltip text-sm text-medium rounded-full bg-selectorBg px-4 pt-2 pb-[10px] space-x-1 md:mr-6">
                         <span className="text-sm text-tertiary font-medium">GPT3.5 </span>
                         <span><HoverFact /></span>
                         <span className="tooltip-cursor"></span>

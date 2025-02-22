@@ -23,8 +23,8 @@ const HoverFact = () => {
         } else {
           // ✅ Get user's location
           const locationResponse = await axios.get("https://ipapi.co/json/");
-          const city = locationResponse.data.city;
-          context = `in ${city}`;
+          const region = locationResponse.data.region; // Assuming 'region' gives the nearest major city
+          context = `in ${region}`;
         }
 
         // ✅ OpenAI prompt with dynamic context

@@ -9,7 +9,7 @@ import MiniButton from './minibutton';
 
 const Profile = () => {
     return (
-        <div className="px-6">
+        <div className="px-5">
             <div className="space-y-0">
                 {/* <p className="pr-8 text-headline md:text-headline-md font-serif text-secondary"><span className="text-primary">Olly Watson</span> is a product designer from the UK, currently working at <Link href="https://www.deliveroo.design/" className="inline-link text-primary">Deliveroo</ Link>.</p> */}
                 {/* <p className="pr-8 text-base text-secondary"><span className="text-primary">Olly Watson</span> is a product designer from the UK, currently working at <Link href="https://www.deliveroo.design/" className="inline-link text-primary">Deliveroo</ Link>.</p> */}
