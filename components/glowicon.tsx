@@ -98,15 +98,27 @@ const GlowIcon = () => {
                     transition: all .3s;
                     }
 
-                    .isOpen .card::before, .card:hover:before {
-                    transform: scale(1.05);
-                    background-image: linear-gradient(
+                    .isOpen .card::before {
+                        transform: scale(1.05);
+                        background-image: linear-gradient(
                         var(--rotate)
                         , #5ddcff, #3c67e3 43%, #4e00c2);
                         position: absolute;
                         z-index: -1;
                         animation: spin 3.5s linear infinite;
                     }
+
+                    @media (hover: hover) and (pointer: fine) {
+                        .card:hover:before {
+                            transform: scale(1.05);
+                            background-image: linear-gradient(
+                            var(--rotate)
+                            , #5ddcff, #3c67e3 43%, #4e00c2);
+                            position: absolute;
+                            z-index: -1;
+                            animation: spin 3.5s linear infinite;
+                        }
+                    }   
 
                     .card::after {
                     position: absolute;
@@ -129,8 +141,14 @@ const GlowIcon = () => {
                     opacity: 0;
                     }
 
-                    .isOpen .card::after, .card:hover:after {
+                    .isOpen .card::after {
                         opacity: 1;
+                    }
+                    
+                    @media (hover: hover) and (pointer: fine) {
+                        .card:hover:after {
+                            opacity: 1;
+                        }
                     }
 
                     .card-container {
@@ -172,14 +190,6 @@ const GlowIcon = () => {
                      100% {
                         --rotate: 360deg;
                     }
-                    }
-
-                    @media (hover: none) {
-                        .card:hover:before, .card:hover:after {
-                            transform: none;
-                            background-image: none;
-                            opacity: 0;
-                        }
                     }
                 `}
             </style>

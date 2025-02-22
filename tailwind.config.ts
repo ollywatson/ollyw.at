@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   mode: 'jit',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
