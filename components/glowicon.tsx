@@ -173,6 +173,14 @@ const GlowIcon = () => {
                         --rotate: 360deg;
                     }
                     }
+
+                    @media (hover: none) {
+                        .card:hover:before, .card:hover:after {
+                            transform: none;
+                            background-image: none;
+                            opacity: 0;
+                        }
+                    }
                 `}
             </style>
             <div className={`relative main-container ${isOpen ? 'isOpen' : ''}`}>
