@@ -5,6 +5,8 @@ import { parseContent } from '@/utils/parseContent'
 import { getProjectData } from '@/utils/getProjectData';
 import MobileNav from '@/components/MobileNav';
 import { getProjectCases } from '@/utils/getProjectCases';
+import TopNav from '@/components/topnav';
+import Footer from '@/components/footer';
 
 
 interface PageProps {
@@ -27,19 +29,14 @@ export default async function ProjectDetails({ params }: PageProps) {
     .flatMap((project: any) => project.cases); // Extract and flatten the cases array
 
   return (
-    <div className="relative z-30 flex flex-col md:flex-row md:p-0 p-6">
-      <div className='md:hidden'>
-        <MobileNav slug={slug} slugItem={slugItem} projectData={projectData} currentProjectCases={currentProjectCases} fileData={data} />
-      </div>
-      <div className='hidden md:block'>
-        <Sidebar slug={slug} slugItem={slugItem} projectData={projectData} currentProjectCases={currentProjectCases} fileData={data} />
-      </div>
+    <div className="relative z-30">
+      <TopNav slug={slug} slugItem={slugItem} projectData={projectData} currentProjectCases={currentProjectCases} fileData={data} />
       {
         content ?
-          <div className='w-full lg:w-3/4 md:w-3/5 md:mt-12 ml-auto mt-6'>
-            <div className='lg:w-1/2 md:w-10/12 mx-auto text-base text-primary'>
-              <main className=''>
-                <article>
+          <div className='w-full mt-20'>
+            <div className='px-6 md:px-[48px] lg:px-[120px] text-base text-primary'>
+              <main>
+                <article className="flex">
                   <Markdown
                     options={{
                       overrides: {
@@ -47,7 +44,7 @@ export default async function ProjectDetails({ params }: PageProps) {
                         p: {
                           component: 'p',
                           props: {
-                            className: 'text-base text-secondary mb-[26px] leading-relaxed text-base text-[#4D555F]', // Tailwind classes
+                            className: 'flex-1 text-sm md:text-base text-secondary mb-6 leading-relaxed', // Tailwind classes
                           },
                         },
 
@@ -55,7 +52,7 @@ export default async function ProjectDetails({ params }: PageProps) {
                         h1: {
                           component: 'h1',
                           props: {
-                            className: 'text-2xl font-bold mb-6 text-[#2E3741]', // Tailwind classes
+                            className: 'text-headline font-serif italic text-primary xl:ml-[740px] 2xl:ml-[912px] pb-2 xl:pr10 2xl:pr-20', // Tailwind classes
                           },
                         },
 
@@ -63,7 +60,7 @@ export default async function ProjectDetails({ params }: PageProps) {
                         h2: {
                           component: 'h2',
                           props: {
-                            className: 'text-xl font-bold mb-6 text-[#2E3741]', // Tailwind classes
+                            className: 'text-xl font-bold mb-6 text-primary', // Tailwind classes
                           },
                         },
 
@@ -75,11 +72,18 @@ export default async function ProjectDetails({ params }: PageProps) {
                           },
                         },
 
+                        h6: {
+                          component: 'p',
+                          props: {
+                            className: 'text-serif-adjust font-serif italic text-tertiary mb-6'
+                          },
+                        },
+
                         // Video (<video>) styling
                         video: {
                           component: 'video',
                           props: {
-                            className: 'w-1/2 h-auto mt-8 mb-2 mx-auto rounded-3xl border-2 border-[#ECF2F9]', // Tailwind classes
+                            className: 'h-auto flex-row mb-6 bg-subtleBg rounded-lg w-full lg:max-w-[300px] 2xl:max-w-[460px] float-left md:mr-6', // Tailwind classes
                             autoPlay: true,
                             loop: true,
                             muted: true,
@@ -87,11 +91,14 @@ export default async function ProjectDetails({ params }: PageProps) {
                           },
                         },
 
-                        // Image (<img>) styling
                         img: {
-                          component: 'img',
-                          props: {
-                            className: 'max-w-[50%] h-auto mt-8 mb-2 mx-auto rounded-3xl border-2 border-[#ECF2F9]', // Tailwind classes
+                          component: ({ src, alt }) => {
+                            return (
+                              <span className="flex flex-col gap-2 xl:flex-row xl:space-x-8 lg:max-w-[700px] xl:max-w-none">
+                                <img src={src} alt={alt} className="w-full h-auto mb-2 bg-subtleBg rounded-lg lg:w-[700px] 2xl:w-[872px]" />
+                                {alt && <span className="text-sm-reading mb-10 md:text-base text-secondary xl:pr10 2xl:pr-20">{alt}</span>}
+                              </span>
+                            );
                           },
                         },
 
@@ -115,7 +122,7 @@ export default async function ProjectDetails({ params }: PageProps) {
                         ul: {
                           component: 'ul',
                           props: {
-                            className: 'mb-6 pl-6 list-disc text-[#4D555F]', // Tailwind classes
+                            className: 'mb-6 pl-6 list-disc', // Tailwind classes
                           },
                         },
 
@@ -137,7 +144,7 @@ export default async function ProjectDetails({ params }: PageProps) {
                         label: {
                           component: 'label',
                           props: {
-                            className: 'text-sm text-tertiary mb-[26px]', // Tailwind classes
+                            className: 'text-sm text-tertiary mb-6 xl:pr10 2xl:pr-20', // Tailwind classes
                           },
                         },
                       },
@@ -148,6 +155,7 @@ export default async function ProjectDetails({ params }: PageProps) {
                 </article>
               </main>
             </div>
+            <Footer isFullWidth={true} />
           </div>
           :
             <div className="w-full lg:w-3/4 md:w-3/5 md:mt-12 ml-auto mt-6">

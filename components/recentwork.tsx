@@ -3,8 +3,8 @@ import ProjectBox from './projectbox';
 
 const RecentWorkSection = () => {
     return (
-        <div className="mt-20 px-[6px]">
-            <p className="text-base text-primary font-semibold px-[20px]">Work</p>
+        <div className="mt-20">
+            <p className="text-serif-adjust text-tertiary font-serif px-6">Work</p>
             <ProjectBox />
         </div>
     );

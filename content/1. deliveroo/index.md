@@ -1,12 +1,13 @@
 ---
 name: Deliveroo
-role: Staff Product Designer
-timeline: 2021 - Present
+role: Staff product designer
+timeline: 2021+
 icon: deliveroo-icon.svg
-color: "#00CCBC"
+color: "#19c4af"
 link: https://www.deliveroo.design/
+linkname: deliveroo.design
 cases:
-  - multi-basket
-  - deliveroo-plus
-  - basket-quick-view
+  - baskets
+  - plus
+  - quick-basket
 ---

@@ -9,7 +9,7 @@ interface Project {
     slug: string; // Slug property
 }
 
-const ProjectRow = async ({ project }: { project: { name: string; role: string; year: string; link: string; icon: string; color: string; hasCases: boolean; slug: string } }) => {
+const ProjectRow = async ({ project }: { project: { name: string; role: string; year: string; link: string; linktype: string; icon: string; color: string; hasCases: boolean; slug: string } }) => {
     const { name, role, year, link, icon, color, hasCases, slug } = project; // Destructure imageUrl, color, hasCases, and slug
     const isExternal = link.startsWith('http');
    
@@ -19,9 +19,10 @@ const ProjectRow = async ({ project }: { project: { name: string; role: string; 
         .flatMap((project: Project) => project.cases); // Extract and flatten the cases array
 
     return (
-        <Link
+        <a
             href={hasCases ? `/projects/${slug}/${currentProjectCases[0]}` : link}
-            className={`button-container flex justify-between items-center p-[20px] text-primary rounded-[26px] transition-colors duration-300 hover:bg-selectorBg ${color} relative group`}
+            className={`button-container flex justify-between items-center p-5 text-primary rounded-[26px] transition-colors duration-300 hover:bg-selectorBg ${color} relative group`}
+            {...(project.linktype === 'download' ? { download: true } : {})}
             {...(isExternal && !hasCases && {
                 target: "_blank",
                 rel: "noopener noreferrer"
@@ -39,14 +40,17 @@ const ProjectRow = async ({ project }: { project: { name: string; role: string; 
                     />
                 </div>
                 <div className="w-full">
-                    <p className="text-base font-semibold">{name}</p>
+                    <div className="flex justify-between items-center">
+                        <p className="text-base font-semibold">{name}</p>
+                        {hasCases && <div className="p-[3px] pr-[5px] pt-[5px] rounded-full bg-selectorBgTransparent"><Image src="/arrow-up-mini.svg" alt="Arrow Up" width={18} height={18} /></div>}
+                    </div>
                     <div className="flex items-center justify-between">
                         <p className="text-sm text-tertiary">{role}</p>
                         <p className="text-sm text-tertiary">{year}</p>
                     </div>
                 </div>
             </div>
-        </Link>
+        </a>
     );
 };
 

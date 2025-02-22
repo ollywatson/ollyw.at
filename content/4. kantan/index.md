@@ -1,12 +1,8 @@
 ---
 name: Kantan
-role: Lead Designer
-timeline: 2019
-icon: rhinestone-icon.svg
-color: "#05003B"
-link: https://www.deliveroo.design/
-cases:
-  - user-interface
-  - interactions
-  - brand
+role: Founding product designer
+timeline: 2019 – 2020
+icon: kantan-icon.svg
+color: "#1E67FC"
+link: https://kantan.co.uk/
 ---
