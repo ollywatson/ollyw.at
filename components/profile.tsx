@@ -17,8 +17,8 @@ const Profile = () => {
                 <p className="text-serif-adjust font-serif italic text-tertiary">Product designer from London, UK</p>
             </div>
             <div className="mt-8">
-                <p className="text-base text-secondary">Over the past 13 years, I’ve worked in consulting, agencies, big tech and startups, at many stages of the product development life cycle – from ethnographic research to brand to design engineering. I get joy from both big picture thinking and being in the weeds with the fine details.</p>
-                <p className="text-base text-secondary mt-6">I’m interested in how digital products shape how people communicate and interact, and built an iPhone app called <Link href="https://www.deliveroo.design/" className="inline-link text-primary">Voicey</Link> to explore more natural and intuitive ways to communicate via voice.</p>
+                <p className="text-base text-secondary">Over the past 13 years, I’ve worked in consulting, agencies, big tech and startups, at many stages of the product development life cycle – from ethnographic research to brand to UI and front end engineering. I get a lot of joy from both big picture thinking and detailed design craft.</p>
+                <p className="text-base text-secondary mt-6">I’m interested in how digital products shape how people communicate and interact, and built an iPhone app called <Link href="/projects/voicey/interface" className="inline-link text-primary">Voicey</Link> to explore new ways to communicate via voice.</p>
             </div>
             <div className="mt-8 flex space-x-[6px]">
                 <MiniButton text="Email" icon="plane" mailto="oliverwcwatson@gmail.com" />

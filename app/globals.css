@@ -30,11 +30,6 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-mona-sans);
-  @apply antialiased;
-}
-
-p {
-  font-feature-settings: "ss05" 1;
 }
 
 svg {
@@ -62,4 +57,40 @@ svg {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.float-video {
+  padding: 0;
+  float: left;
+}
+
+/* md breakpoint */
+@media (min-width: 768px) {
+  .float-video {
+    padding: 0 !important;
+    margin-right: 24px;
+  }
+}
+
+/* lg breakpoint */
+@media (min-width: 1024px) {
+  .float-video {
+    padding: 0 !important;
+    max-width: 300px;
+  }
+}
+
+/* xl breakpoint */
+@media (min-width: 1280px) {
+  .float-video {
+    padding: 0 !important;
+  }
+}
+
+/* 2xl breakpoint */
+@media (min-width: 1536px) {
+  .float-video {
+    padding: 0 !important;
+    max-width: 460px;
+  }
 }

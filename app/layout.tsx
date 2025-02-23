@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${monaSans.variable}`}>
+    <html lang="en" className={`${monaSans.variable} antialiased`}>
       <head>
         <link rel="icon" href="/favicon.svg" />
       </head>

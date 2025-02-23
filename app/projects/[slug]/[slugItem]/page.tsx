@@ -55,7 +55,7 @@ export default async function ProjectDetails({ params }: PageProps) {
                           h1: {
                             component: 'h1',
                             props: {
-                              className: 'text-headline md:text-headline-md font-serif italic text-primary mb-10 xl:ml-[740px] 2xl:ml-[912px] pb-2 xl:pr10 2xl:pr-20', // Tailwind classes
+                              className: 'text-headline md:text-headline-md font-serif italic text-primary mb-16 xl:ml-[740px] 2xl:ml-[912px] pb-2 xl:pr10 2xl:pr-20', // Tailwind classes
                             },
                           },
 
@@ -86,7 +86,8 @@ export default async function ProjectDetails({ params }: PageProps) {
                           video: {
                             component: 'video',
                             props: {
-                              className: 'h-auto flex-row mb-6 bg-subtleBg rounded-[40px] w-full lg:max-w-[300px] 2xl:max-w-[460px] float-left md:mr-6', // Tailwind classes
+                              // className: 'h-auto flex-row mb-6 bg-subtleBg rounded-[40px] w-full lg:max-w-[300px] 2xl:max-w-[460px] float-left md:mr-6', // Tailwind classes
+                              className: 'h-auto mb-6 bg-subtleBg rounded-lg w-full lg:w-[700px] 2xl:w-[872px] px-[30%] py-[6%] lg:px-[208px] 2xl:px-[274px] lg:py-12 2xl:py-14',
                               autoPlay: true,
                               loop: true,
                               muted: true,
