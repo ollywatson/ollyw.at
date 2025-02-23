@@ -1,6 +1,6 @@
 ---
 name: Rhinestone
-role: Brand & illustration
+role: Brand, web & illustration
 timeline: 2022+
 icon: rhinestone-icon.svg
 color: "#4F41EF"

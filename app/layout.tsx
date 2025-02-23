@@ -29,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${monaSans.variable} antialiased`}>
       <head>
+        <title>Olly Watson</title>
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body>
