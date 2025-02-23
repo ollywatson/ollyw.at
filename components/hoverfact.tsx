@@ -29,7 +29,7 @@ const HoverFact = () => {
 
         // ✅ OpenAI prompt with dynamic context
         const prompt = `
-          Generate exactly one whimsical, self-deprecating fact about Olly, a digital product designer.
+          Generate exactly one whimsical, self-deprecating fact about Olly (he/him), a digital product designer.
           The fact must be based on: **${context}**.
 
           Strict rules:
