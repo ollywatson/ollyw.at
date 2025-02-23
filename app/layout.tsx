@@ -1,5 +1,6 @@
 import '../app/globals.css';
 import { Literata, Mona_Sans, Outfit } from 'next/font/google';
+import PreloadImages from '@/components/preloadimages';
 
 // Load the fonts
 const literata = Literata({
@@ -31,9 +32,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body>
+        <PreloadImages />
         {children}
-        {/* <div className="fixed inset-0 z-0 bg-dot-pattern bg-13px h-full w-full"></div> */}
-        {/* <div id="mask-gradient" className="absolute inset-0 z-1 bg-gradient-to-b from-[#181818] to-transparent h-screen"></div> */}
       </body>
     </html>
   );
