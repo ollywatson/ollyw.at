@@ -22,7 +22,7 @@ const FadeIn: React.FC<FadeInProps> = ({ children, delay = 0 }) => {
     <div
       style={{
         opacity: isVisible ? 1 : 0,
-        transition: "opacity 0.5s ease-out 0.2s, transform 0.5s ease-out 0.2s",
+        transition: "opacity 0.5s ease-out 0.1s",
       }}
     >
       {children}
