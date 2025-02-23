@@ -55,7 +55,7 @@ export default async function ProjectDetails({ params }: PageProps) {
                           h1: {
                             component: 'h1',
                             props: {
-                              className: 'text-headline md:text-headline-md font-serif italic text-primary mb-16 xl:ml-[740px] 2xl:ml-[912px] pb-2 xl:pr10 2xl:pr-20', // Tailwind classes
+                              className: 'text-headline md:text-headline-md font-serif italic text-primary mb-10 xl:ml-[740px] 2xl:ml-[912px] pb-2 xl:pr10 2xl:pr-20', // Tailwind classes
                             },
                           },
 
