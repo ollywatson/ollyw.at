@@ -8,6 +8,8 @@ const imagesToPreload = [
     "/quick-view-1.png",
     "/voicey-ui-1.png",
     "/voicey-logo.jpg",
+    "/rhinestone-brand-1.png",
+    "/rhinestone-illustration-0.jpg",
 ];
 
 const PreloadImages = () => {

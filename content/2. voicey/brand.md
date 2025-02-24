@@ -1,5 +1,4 @@
 
+![Logo](/voicey-logo.jpg)
 
-![Logo](/voicey-logo.jpg "Optional caption")
-
-![App icon](/voicey-app-icon.jpg "Optional caption")
+![App icon](/voicey-app-icon.jpg)
