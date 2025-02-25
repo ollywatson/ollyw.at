@@ -10,6 +10,9 @@ const imagesToPreload = [
     "/voicey-logo.jpg",
     "/rhinestone-brand-1.png",
     "/rhinestone-illustration-0.jpg",
+    "/shadwell-brand-1.png",
+    "/shadwell-posters-1.png",
+    "/shadwell-web-1.png",
 ];
 
 const PreloadImages = () => {

@@ -5,5 +5,9 @@ timeline: 2020
 icon: shadwell-icon.svg
 color: "#1A9BA3"
 link: https://www.shadwell.org.uk/
-linkname: Website
+linkname: shadwell.org.uk
+cases:
+  - brand
+  - web
+  - posters
 ---
