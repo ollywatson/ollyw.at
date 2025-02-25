@@ -1,3 +1,5 @@
+# A developer-facing brand based on the concept of modularity
+
 ![I designed a simple brand for Rhinestone, who are building modular account abstraction tools for developers building on Ethereum.](/rhinestone-brand-1.png)
 
 ![The logo builds on this idea of modularity, and the founders' ambition to build an "App store for smart accounts".](/rhinestone-brand-2.png)

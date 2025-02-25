@@ -1,3 +1,5 @@
+# Unlocking the future of live performance
+
 ![I designed a brand identity for Shadwell, an opera and music theatre company based in the UK.](/shadwell-brand-dark.png)
 
 ![I started to notice this distinctive horse shoe shape in the floorplan of many opera houses. This is the shape of the auditorium, where the audience sit during performances. This architectural structure encodes something fundamental about live experiences, with audience members turned inwards towards each other, as well as facing the stage.](/shadwell-brand-2.png)
