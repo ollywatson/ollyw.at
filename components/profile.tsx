@@ -23,7 +23,7 @@ const Profile = () => {
             <div className="mt-8 flex space-x-[6px]">
                 <MiniButton text="Email" icon="plane" mailto="oliverwcwatson@gmail.com" />
                 <MiniButton text="LinkedIn" icon="arrow" link="https://www.linkedin.com/in/olly-watson-9a587238/" />
-                <MiniButton text="Github" icon="arrow" link="https://github.com/ollywatson" />
+                <MiniButton text="GitHub" icon="arrow" link="https://github.com/ollywatson" />
             </div>
         </div>
     );
