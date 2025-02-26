@@ -12,7 +12,7 @@ const ProjectBoxAlt = async () => {
                     <ProjectRow project={project} />
                     {index !== projects.length - 1 && (
                         <div className="absolute bottom-0 left-0 right-0 h-[1px] opacity-100 group-hover:opacity-0 transition-opacity duration-300">
-                            <div className="mx-4 h-full bg-borderLight opacity-50 rounded-full" />
+                            <div className="mx-5 h-full bg-borderLight opacity-50 rounded-full" />
                         </div>
                     )}
                 </div>
