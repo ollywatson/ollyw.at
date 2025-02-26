@@ -8,4 +8,4 @@
 
 ![I wanted the brand to have a flowing, handmade feel, to capture the imperfect, human qualities of orchestral music. I moved between digital and physical media, using ink brushes to trace digitally refined shapes.](/shadwell-brand-3.jpg)
 
-![Building on the logo's horseshoe shape, I crafted custom lettering, achieving a distinctive typographic style that aims to be both classic looking but also friendly and informal.](/shadwell-brand-4.jpg)
+![Building on the logo's horseshoe shape, I crafted a wordmark with custom lettering, achieving a distinctive typographic style that aims to be both classic looking but also friendly and informal.](/shadwell-brand-4.jpg)
