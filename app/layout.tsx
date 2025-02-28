@@ -31,6 +31,17 @@ export default function RootLayout({
       <head>
         <title>{metadata.title}</title>
         <link rel="icon" href="/favicon.svg" />
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPVCYLMVP9"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-FPVCYLMVP9');
+        </script>
+
       </head>
       <body>
         <PreloadImages />
